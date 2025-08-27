@@ -31,7 +31,7 @@
 
 header{
     width: 100%;
-    padding: 60px 4%;
+    padding: 20px 2%;
     position: fixed;
     top: 0;
     left: 0;
@@ -41,7 +41,7 @@ header{
 
 .logo2{
     object-fit: cover;
-    width: 300px;
+    width: 200px;
     height: 100px;
     
 }
@@ -78,7 +78,7 @@ header ul li a:hover{
 }
 
 .bnt-contato button{
-    width: 120px;
+    width: 100px;
     height: 40px;
     border: 0;
     background-color: aqua;
@@ -100,7 +100,7 @@ header ul li a:hover{
 
 .banner{
     height: 100vh;
-    background-image: url(imagens/pexels-airamdphoto-9408358.jpg);
+    background-image: url(imagens/educação.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -112,9 +112,12 @@ header ul li a:hover{
 }
 
 .banner h1{
-    font-size: 3em;
+    font-size: 2.2em;
     color: white;
     padding: 30px;
+    
+ 
+
     
 }
 
@@ -132,14 +135,19 @@ header ul li a:hover{
 }
 
 header.rolagem{
-    background-color: transparent;
+    background-image: linear-gradient(to right, rgb(41, 41, 172), rgb(125, 243, 252));
      padding: 1px 1%;
-     height: 130px
+     height: 100px
 }
 
 header.rolagem a{
-     padding: 20px 4%;
+     padding: 20px 2%;
      color: rgb(255, 255, 255);
+     
+     
+    
+
+
 }
  }
 
@@ -284,13 +292,14 @@ header ul li a:hover{
 }
 
 header.rolagem{
-    background-color: transparent;
-     padding: 1px 1%;
-     height: 130px
+    background-image: linear-gradient(to right, rgb(41, 41, 172), rgb(125, 243, 252));
+     width: 100%;
+     padding: 1px 2%;
+     height: 130px;
 }
 
 header.rolagem a{
-     padding: 20px 4%;
+     padding: 10px 1%;
      color: rgb(255, 255, 255);
 }
  }
