@@ -5,28 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="estilos/mediaQuery.css">
     
     <title>Waves</title>
 </head>
 <body >
-    <main id="conteudo">
+  <main id="conteudo">
 
     <header id="menu">
 
       <div class="container">
 
-
         <div class="flex">
+
+          <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+
+
           <a href="index.html">
             <img src="estilos/imagens/original.png" alt="logo" class="logo2">
           </a>
 
-          <nav>
-            <ul>
+      
+         
+
+          <nav id="nav">
+            <ul class="nav-list" id="nav-list">
               <li> <a href="#" class="nav-item"> Quem somos</a> </li>
               <li> <a href="#" class="nav-item"> O que fazemos</a> </li>
               <li><a href="#" class="nav-item"> Fale conosco</a></li>
+              <li class="mobile-cta"><a href="#" class="btn-mobile">CONTATO</a></li>
             </ul>
           </nav>
 
@@ -36,15 +47,15 @@
 
 
         </div>
-      </div>
+        </div>
     </header>
 
     <section class="banner">
         <h1>Protegendo os <span>Oceanos,</span> Cuidando da vida</h1>
         <p><span>Waves Corp</span> luta contra as mudanças climáticas e protege animais marinhos.</p>
     </section>
-</main>
 
+</main>
 <script src="index.js"></script>
 
 </body>
