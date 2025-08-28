@@ -143,10 +143,15 @@ header.rolagem{
 header.rolagem a{
      padding: 20px 2%;
      color: rgb(255, 255, 255);
-     
-     
+}
+
+section{
+    height: calc(100vh + 130px);
+    padding-top: 130px;
     
 
+    display: flex;
+    justify-content: center;
 
 }
  }
@@ -171,6 +176,8 @@ header.rolagem a{
     font-family: Arial, Helvetica, sans-serif;
     
 }
+
+
 
 
 .container{
@@ -302,4 +309,17 @@ header.rolagem a{
      padding: 10px 1%;
      color: rgb(255, 255, 255);
 }
+
+
+section{
+    height: calc(100vh + 130px);
+    padding-top: 130px;
+    
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
  }

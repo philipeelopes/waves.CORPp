@@ -22,7 +22,6 @@ menuBtn.addEventListener('click', () => {
   menuIcon.textContent = opened ? 'close' : 'menu';
 });
 
-// Fecha ao clicar em qualquer link do menu
 document.querySelectorAll('#nav a').forEach(a => {
   a.addEventListener('click', closeMenu);
 });
