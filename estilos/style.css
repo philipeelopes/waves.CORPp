@@ -42,9 +42,17 @@ border: 0;
 @media screen  and (max-width: 768px){
 
 .flex{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 10px;
     width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu-btn{
@@ -54,7 +62,6 @@ border: 0;
     width: 44px;
     height: 44px;
     cursor: pointer;
-     
 }
 
 .mobile-cta{
@@ -70,6 +77,8 @@ border: 0;
 .menu-btn .material-symbols-outlined{
     font-size: 32px;
     color: #fff;
+    padding-top: 10px;
+    
     
   
 }
@@ -105,6 +114,7 @@ border: 0;
 
 #nav .nav-list li {
     margin: 0;
+    padding-top: 20px;
 }
 
 #nav .nav-list a{
@@ -139,20 +149,34 @@ border: 0;
     object-fit: cover;
     width: 200px;
     height: 100px;
-
+    
+    
     
 }
 
 header{
     width: 100%;
-    padding: 20px 2%;
+    padding: 20px 1%;
     position: fixed;
+    flex-direction: column;
     top: 0;
     left: 0px;
     transition: 1s;
-    
-
 }
+
+
+header.rolagem{
+    background-image: linear-gradient(to right, rgb(41, 41, 172), rgb(125, 243, 252));
+     width: 100%;
+     padding: 1px 2%;
+     height: 80px;
+}
+
+header.rolagem a{
+     padding: 10px 1%;
+     color: rgb(255, 255, 255);
+}
+
 
 .banner h1{
     font-size: 2.2em;
