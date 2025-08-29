@@ -31,7 +31,7 @@
 
 header{
     width: 100%;
-    padding: 20px 2%;
+    padding: 10px 2%;
     position: fixed;
     top: 0;
     left: 0;
@@ -136,8 +136,9 @@ header ul li a:hover{
 
 header.rolagem{
     background-image: linear-gradient(to right, rgb(41, 41, 172), rgb(125, 243, 252));
-     padding: 1px 1%;
-     height: 100px
+     padding: 1px 2%;
+     height: 105px;
+    
 }
 
 header.rolagem a{
@@ -199,7 +200,7 @@ section{
 
 header{
     width: 100%;
-    padding: 60px 4%;
+    padding: 20px 2%;
     position: fixed;
     top: 0;
     left: 0;
@@ -303,11 +304,13 @@ header.rolagem{
      width: 100%;
      padding: 1px 2%;
      height: 130px;
+     
 }
 
 header.rolagem a{
      padding: 10px 1%;
      color: rgb(255, 255, 255);
+     
 }
 
 
