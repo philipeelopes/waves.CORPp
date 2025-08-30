@@ -12,7 +12,7 @@ html{
 
 html{
     height: 500vh;
-   background-color: #67dffa;
+   background-color: #edfeec;
 }
 
 .menu-btn{
@@ -106,7 +106,7 @@ border: 0;
 #nav{
     position: fixed;
     top: 0;
-    left: -250px; /* escondido à direita */
+    left: -250px; /* escondido direita */
     width: 160px;
     height: 100%;
     background: rgb(61, 61, 61);
@@ -202,19 +202,13 @@ header{
 
 
 header.rolagem{
-   /* background-image: linear-gradient(to top right, #96f5f9, #bdfcfa, #edfeec);*/
-
-     background: rgba(255, 255, 255, 0.1);
-     backdrop-filter: blur(10px);
-     -webkit-backdrop-filter: blur(10px);
-     box-shadow: 0 10px 10px rgba(255, 255, 255, 0.11);
-
-
+    background-image: linear-gradient(45deg, #96f5f9, #bdfcfa, #edfeec);
      width: 100%;
      padding: 1px 2%;
-     height: 90px;
-     animation: moverGradient 5s ease infinite;
+     height: 60px;
      background-size: 400% 400%;
+     animation: moverGradient 5s ease infinite;
+    
 }
 
 @keyframes moverGradient {
@@ -230,9 +224,12 @@ header.rolagem{
 }
 
 header.rolagem a{
-     padding: 10px 1%;
+     padding:0px 1%;
      color: rgb(255, 255, 255);
+
 }
+
+
 
 
 .banner h1{
