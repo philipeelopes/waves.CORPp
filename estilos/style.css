@@ -92,7 +92,7 @@ border: 0;
 
 .menu-btn .material-symbols-outlined{
     font-size: 42px;
-    color: #fff;
+    color:#edfeec;
     padding-top: 10px;
     
     
@@ -137,7 +137,7 @@ border: 0;
 
 #nav .nav-list a{
     font-size: 1.2rem;
-    color: #fff;
+    color: #edfeec;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -202,26 +202,15 @@ header{
 
 
 header.rolagem{
-    background-image: linear-gradient(45deg, #96f5f9, #bdfcfa, #edfeec);
+    background-color: #005164;
      width: 100%;
      padding: 1px 2%;
      height: 60px;
      background-size: 400% 400%;
-     animation: moverGradient 5s ease infinite;
+    
     
 }
 
-@keyframes moverGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 header.rolagem a{
      padding:0px 1%;
@@ -248,10 +237,85 @@ section{
     
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+   
+}
+
+
+  
+
+.texto{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; 
+    max-width: 100%;
+    
+    
+}
+
+section  h2{
+ font-size: 1.5em;
+ margin-bottom: 20px;
+
+ 
+}
+
+section  p {  
+    font-size: 1.1em;
+    line-height: 1.6em;
+    
+   
+}
+
+.imagem{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  
+}
+
+
+.imagem img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
+   
+  
+    
+    
+}
+
+#quem-somos {
+
+  display: flex;
+  flex-direction:column-reverse; 
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 
 }
 
+#o-que-fazemos{
+
+  display: flex;
+  flex-direction:column-reverse; 
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
  
 }
     
