@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 767px) and (max-height: 1023px) {
+@media screen and (min-width: 768px) and (max-height: 1024px) {
     /* tablet*/
 
-    * {
+   * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -160,12 +160,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 800px;
+    max-width: 95%;
 }
 
 section  h2{
  font-size: 2em;
- margin-bottom: 20px;
+ margin-bottom: 2%;
 }
 
 section  p {  
@@ -176,17 +176,21 @@ section  p {
 
 .imagem{
     flex: 1;
-    padding-top: 40px;
+    padding-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
 }
 
 .imagem img{
     object-fit: cover;
-    width: 800px;
-    height: 80%;
+    width: 85%;
+    height: 100%;
     
     border-radius: 15px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
-  
+    
 }
 
 
@@ -196,21 +200,25 @@ section  p {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 5%;
   
+}
+
+.texto2{
+    width: 95%;
 }
 
 #o-que-fazemos{
+  
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  
+
+}
 
 }
 
 
-
-}
 
 
 
@@ -378,7 +386,7 @@ header.rolagem a {
  section  {
     height: calc(100vh + 10px);
     padding-top: 130px;
-    box-shadow: 1px 1px 1px #67dffa;
+   
     
 
     display: flex;
@@ -392,15 +400,15 @@ header.rolagem a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 500px;
-    padding-left: 50px;
+    width: 50%;
+    padding-left: 3%;
     
     
 }
 
-section  h2{
+section .t1{
 font-size: 2.4em;
-margin-bottom: 20px;
+margin-bottom: 10%;
 font-weight: bolder;  
 color: #004858;
  
@@ -408,24 +416,24 @@ color: #004858;
  
 }
 
-section  p {  
-    font-size: 1.5em;
+section  .p1 {  
+    font-size: 1.2em;
     line-height: 1.6em;
-    width: 380px;
+    width: 100%;
     color: black;
    
 }
 
 .imagem{
    flex: 4;
-   padding-top: 10px;
-   padding-left: 30px;
+   padding-top: 2%;
+   padding-left: 0%;
    
 }
 
 .imagem img{
-    width: 70%;
-    height: 480px;
+    width: 60%;
+    height: 50%;
     border-radius: 15px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
 
@@ -436,8 +444,8 @@ section  p {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  padding-bottom: 400px;
-  padding-left: 350px;
+  padding-bottom: 10%;
+  padding-left: 10%;
  
 }
 
@@ -448,7 +456,7 @@ section  p {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 2%;
 }
  
 .texto2{
@@ -456,34 +464,28 @@ section  p {
 }
 
 section .t2{
-padding: 10px;
+color: #004858;
+padding: 1%;
 
 display: flex;
 align-items: center;
 justify-content: flex-start;
-padding-left: 100px;
+padding-left: 10%;
 
 }
 
 section .p2{
+
    width: 90%;
-   padding: 10px;
+   padding: 1%;
    font-size: 1.2em;
-   padding-left: 100px;
+   padding-left: 10%;
 
 }
-   
 
-
-
-
-   
-
-
-
-
-
-
-
+.imagem .img2{
+    width: 100%;
+}
 
 }
+

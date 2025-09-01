@@ -12,7 +12,7 @@ html{
 
 html{
     height: 500vh;
-   background-color: #edfeec;
+   background-color: #ffffff;
 }
 
 .menu-btn{
@@ -29,15 +29,13 @@ background: none;
 border: 0;
 }
 
-/*paleta
+/*
+paleta
 #67dffa
 #96f5f9
 #bdfcfa
 #edfeec
 */
-
-
-
 
 
 @media screen  and (max-width: 768px){
@@ -61,7 +59,7 @@ border: 0;
   }
 
 .container{
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -91,9 +89,10 @@ border: 0;
 
 
 .menu-btn .material-symbols-outlined{
-    font-size: 42px;
+    font-size: 40px;
     color:#edfeec;
-    padding-top: 10px;
+    padding: 1%;
+    
     
     
   
@@ -106,7 +105,7 @@ border: 0;
 #nav{
     position: fixed;
     top: 0;
-    left: -250px; /* escondido direita */
+    left: -250px;
     width: 160px;
     height: 100%;
     background: rgb(61, 61, 61);
@@ -277,20 +276,16 @@ section  p {
     align-items: flex-start;
 }
 
-.imagem{
+.imagem {
   padding: 0;
   width: 90%;
   display: flex;
-  align-items:center;
-  
-  
- 
-  
+  align-items:center;  
   
 }
 
 
-.imagem img{
+.imagem img {
     width: 100%;
     height: auto;
     border-radius: 15px;
@@ -306,7 +301,7 @@ section  p {
   align-items: center;
   text-align: left;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 2%;
  
 
 }
@@ -317,17 +312,20 @@ section  p {
   flex-direction:column-reverse; 
   align-items: center;
   text-align: left;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 2%;
   
 }
+
+.texto2{
+    width: 90%;
+}
+
+
+
  
 }
-    
-
-
-
-
+ 
 
 
 
