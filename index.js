@@ -27,4 +27,24 @@ document.querySelectorAll('#nav a').forEach(a => {
 });
 
 
+const imagem = document.querySelector('.imagem')
+
+const myObserver = new IntersectionObserver( (entries) =>{
+ entries.forEach ( (entry) =>{
+  if(entry.isIntersecting){
+    entry.target.classList.add('show')
+  } else{
+    entry.target.classList.remove('show')
+  }
+    
+ })
+})
+
+const elements = document.querySelectorAll('.hidden', '#hidden')
+
+elements.forEach( (element) => myObserver.observe (element))
+
+
+
+
 
