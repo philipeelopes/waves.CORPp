@@ -44,6 +44,11 @@ const elements = document.querySelectorAll('.hidden', '#hidden')
 
 elements.forEach( (element) => myObserver.observe (element))
 
+window.addEventListener('load', () => {
+  const banner = document.querySelector('.banner');
+  banner.classList.add('show');
+});
+
 
 
 
