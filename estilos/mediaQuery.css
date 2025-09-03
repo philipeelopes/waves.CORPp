@@ -177,7 +177,7 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        max-width: 95%;
+        max-width: 100%;
         padding-left: 2% ;
     }
 
@@ -200,7 +200,7 @@
         padding-top: 4%;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
 
     }
 
@@ -220,27 +220,31 @@
 
         display: flex;
         flex-direction: column;
-        align-items:flex-start;
+        align-items:center;
+        text-align: left;
         padding-bottom: 20%;
 
     }
 
     .texto2 {
         width: 95%;
-    }
-
-    #quem-somos .imagem {
-        order: 2;
+   
     }
 
     #quem-somos .texto {
         order:0;
     }
 
+    #quem-somos .imagem {
+        order: 1;
+    }
+
+    #quem-somos .bloco-extra {
+     order: 2; 
+    }
     #quem-somos .texto11 {
-        order: 3;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 5%;
     }
 
     #o-que-fazemos {
@@ -311,8 +315,7 @@
     }
 
     #quem-somos .imagem-secundaria img {
-        display: none;
-
+      display: none;
     }
 
     .texto11 {
@@ -617,7 +620,6 @@
 
 
     #quem-somos {
-
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
@@ -625,7 +627,13 @@
         justify-content: end;
         padding-bottom: 5%;
         padding-left: 15%;
-    }
+}
+
+#quem-somos .texto {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #004858;
+}
 
     #quem-somos .bloco-extra {
         display: flex;
@@ -634,6 +642,8 @@
         padding-left: 3%;
 
     }
+
+  
 
     #quem-somos .imagem-secundaria img {
         width: 95%;
@@ -647,7 +657,7 @@
         width: 100%;
 
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-end;
         gap: 2%;
     }
