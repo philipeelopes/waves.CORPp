@@ -23,10 +23,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-
-
-
     }
 
     header {
@@ -101,7 +97,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        
+
 
 
         display: flex;
@@ -127,7 +123,7 @@
 
 
     .banner h1 {
-        
+
         font-size: 2.6em;
         color: white;
         padding: 30px;
@@ -180,8 +176,9 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: start;
         max-width: 95%;
+        padding-left: 2% ;
     }
 
     section h2 {
@@ -193,14 +190,17 @@
         font-size: 1.1em;
         line-height: 1.6em;
 
+        
+
     }
 
     .imagem {
         flex: 1;
+        padding-left: 2%;
         padding-top: 4%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
 
     }
 
@@ -219,14 +219,28 @@
     #quem-somos {
 
         display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        padding-bottom: 5%;
+        flex-direction: column;
+        align-items:flex-start;
+        padding-bottom: 20%;
 
     }
 
     .texto2 {
         width: 95%;
+    }
+
+    #quem-somos .imagem {
+        order: 2;
+    }
+
+    #quem-somos .texto {
+        order:0;
+    }
+
+    #quem-somos .texto11 {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
     }
 
     #o-que-fazemos {
@@ -251,12 +265,13 @@
         transform: translateX(0);
         transition: all 0.5s;
     }
-     .conteudo{
+
+    .conteudo {
         width: 100%;
         height: 100%;
     }
 
-    .arrow{
+    .arrow {
         position: absolute;
         width: 180px;
         height: 180px;
@@ -264,38 +279,73 @@
     }
 
     .arrow::before,
-    .arrow::after{
+    .arrow::after {
         content: "";
         position: absolute;
         background: #FA4616;
     }
 
-    .arrow::before{
+    .arrow::before {
         width: 20%;
         height: 100%;
         left: 0;
         bottom: 0;
     }
 
-    .arrow::after{
+    .arrow::after {
         width: 100%;
         height: 20%;
         left: 0;
         bottom: 0;
     }
 
-    .arrow.left{
+    .arrow.left {
         left: 0%;
         bottom: 0%;
     }
 
-    .arrow.right{
+    .arrow.right {
         right: 0%;
         bottom: 0%;
         transform: scaleX(-1);
     }
 
+    #quem-somos .imagem-secundaria img {
+        display: none;
+
+    }
+
+    .texto11 {
+        flex: 0 0 100%;
+        margin-top: 1.5rem;
+        padding-left: 0%;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+
+
+
+        border-top: 1px solid #FA4616;
+        border-bottom: 1px solid #FA4616;
+        padding: 1%;
+
+    }
+
+    .texto11 .p11 {
+
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
 }
+
 
 
 
@@ -360,7 +410,7 @@
 
     header ul {
         list-style-type: none;
-       
+
 
 
 
@@ -369,8 +419,8 @@
     header ul li {
         display: inline-flex;
         margin: 0px 40px;
-    
-        
+
+
 
 
     }
@@ -387,7 +437,7 @@
     }
 
     header ul li a:hover {
-        color:  #FA4616;
+        color: #FA4616;
         cursor: pointer;
 
     }
@@ -404,7 +454,7 @@
         transition: .2s;
         border-radius: 15px;
         box-shadow: 2px 2px 10px rgb(0, 0, 0);
-    
+
     }
 
     .bnt-contato button:hover {
@@ -455,7 +505,7 @@
 
     .banner h1 {
         font-size: 3em;
-        color: #edfeec;
+        color: #ffffff;
 
     }
 
@@ -471,7 +521,7 @@
 
 
     header.rolagem {
-        background-image: linear-gradient(45deg,  #004858);
+        background-image: linear-gradient(45deg, #004858);
         width: 100%;
         padding: 0px 1%;
         height: 80px;
@@ -506,12 +556,15 @@
     }
 
     .texto {
-        flex:0 0 30%;
+        flex: 0 0 30%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+
         width: 100%;
         padding-left: 3%;
+        padding-bottom: 15%;
 
 
     }
@@ -524,6 +577,7 @@
 
 
 
+
     }
 
     section .p1 {
@@ -532,19 +586,21 @@
         width: 100%;
         height: auto;
         color: black;
+        padding-top: 3%;
 
     }
 
-    section .p11{
+    section .p11 {
         font-size: 1.2em;
 
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: start;
+
     }
 
     .imagem {
-        flex: 1 1 50%;
+        flex: 1 1 40%;
         padding-top: 2%;
         padding-left: 6%;
 
@@ -553,10 +609,12 @@
     .imagem img {
         width: 60%;
         height: 40%;
-        border-radius: 15px;
+        border-radius: 10px;
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
 
     }
+
+
 
     #quem-somos {
 
@@ -564,9 +622,24 @@
         flex-direction: row-reverse;
         align-items: center;
         flex-wrap: wrap;
-        padding-bottom: 10%;
-        padding-left: 20%;
-        
+        justify-content: end;
+        padding-bottom: 5%;
+        padding-left: 15%;
+    }
+
+    #quem-somos .bloco-extra {
+        display: flex;
+        align-items: flex-end;
+        gap: 8%;
+        padding-left: 3%;
+
+    }
+
+    #quem-somos .imagem-secundaria img {
+        width: 95%;
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+
     }
 
     #o-que-fazemos {
@@ -596,28 +669,34 @@
     }
 
     .texto11 {
-    flex: 0 0 100%;
-    width: 100%;
-    order: 99;
-    margin-top: 1.5rem;
-    padding-left: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-top: 10%;
-    }
-    
+        flex: 0 0 66%;
+        order: 99;
+        margin-top: 1.5rem;
+        padding-left: 3%;
+        display: flex;
+        align-items: end;
+        justify-content: start;
 
-.texto11 .p11 {
-    
-    width: 73%;       
-    max-width: 100%;
-    font-size: 1.2em;
-    line-height: 1.6em;
-    text-align: justify; 
-    
-}
-    
+
+
+        border-top: 1px solid #FA4616;
+        border-left: 1px solid #FA4616;
+        border-bottom: 1px solid #FA4616;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 2%;
+
+    }
+
+    .texto11 .p11 {
+
+        width: 60%;
+        max-width: 100%;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        text-align: justify;
+    }
+
 
 
 
@@ -651,12 +730,12 @@
     }
 
 
-    .conteudo{
+    .conteudo {
         width: 100%;
         height: 100%;
     }
 
-    .arrow{
+    .arrow {
         position: absolute;
         width: 180px;
         height: 180px;
@@ -664,36 +743,35 @@
     }
 
     .arrow::before,
-    .arrow::after{
+    .arrow::after {
         content: "";
         position: absolute;
         background: #FA4616;
     }
 
-    .arrow::before{
+    .arrow::before {
         width: 20%;
         height: 100%;
         left: 0;
         bottom: 0;
     }
 
-    .arrow::after{
+    .arrow::after {
         width: 100%;
         height: 20%;
         left: 0;
         bottom: 0;
     }
 
-    .arrow.left{
+    .arrow.left {
         left: 0%;
         bottom: 0%;
     }
 
-    .arrow.right{
+    .arrow.right {
         right: 0%;
         bottom: 0%;
         transform: scaleX(-1);
     }
 
-   
-    }
+}
