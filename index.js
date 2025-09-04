@@ -52,4 +52,39 @@ window.addEventListener('load', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderRoot = document.querySelector('#o-que-fazemos .container-slider');
+  if (!sliderRoot) return;
+
+  const slides = Array.from(sliderRoot.querySelectorAll('.slide'));
+  const btnPrev = sliderRoot.querySelector('#prev-button');
+  const btnNext = sliderRoot.querySelector('#next-button');
+
+  // índice inicial (se algum slide já tiver .active, respeita; senão 0)
+  let current = slides.findIndex(s => s.classList.contains('active'));
+  if (current === -1) {
+    current = 0;
+    if (slides[0]) slides[0].classList.add('active');
+  }
+
+  function show(index) {
+    index = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    current = index;
+  }
+
+  btnPrev && btnPrev.addEventListener('click', () => show(current - 1));
+  btnNext && btnNext.addEventListener('click', () => show(current + 1));
+
+  // teclas (opcional)
+  sliderRoot.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+  sliderRoot.setAttribute('tabindex', '0');
+});
+
+
+
+
 
