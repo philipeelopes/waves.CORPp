@@ -256,132 +256,152 @@
     }
 
     #o-que-fazemos {
-    background-color: #004858;
-  position: relative;
-  overflow: hidden;
-  padding-top: 5px; /* espaço para não bater no header fixo */
-}
+        background-color: #004858;
+        position: relative;
+        overflow: hidden;
+        padding-top: 5px;
+        /* espaço para não bater no header fixo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-/* container raiz do slider */
-#o-que-fazemos .container-slider {
-  position: relative;
-  width: min(65%, 100%);
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 2px 2px 15px rgba(0,0,0,.15);
-  background: #f7fafa;
-  padding: 2rem;
-  min-height: 60%; /* altura mínima do slider */
-  box-sizing: border-box;
-  overflow: hidden;
+    }
+
+    /* container raiz do slider */
+    #o-que-fazemos .container-slider {
+        position: absolute;
+        width: min(65%, 100%);
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, .15);
+        background: #f7fafa;
+        padding: 2rem;
+        min-height: 60%;
+        /* altura mínima do slider */
+        box-sizing: border-box;
+        overflow: hidden;
 
 
 
-  
-}
 
-/* wrapper que contém os slides */
-#o-que-fazemos .slides {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  
-  
+    }
 
-  
+    /* wrapper que contém os slides */
+    #o-que-fazemos .slides {
+        position: absolute;
+        width: 100%;
+        height: 90%;
 
- 
-}
 
-/* cada slide ocupa toda a área (um sobre o outro) */
-#o-que-fazemos .slide {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 50% 50%; /* metade imagem / metade texto */
-  gap: 2rem;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  justify-content: end;
 
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: opacity .45s ease, transform .45s ease;
-  padding-left: 40px;
-}
 
-/* slide visível */
-#o-que-fazemos .slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  z-index: 2;
-}
 
-/* imagem dentro do slide */
-#o-que-fazemos .slide > img {
-  width: 100%;
-  height: 100%;
-  max-height: calc(100% - 2rem);
-  object-fit: cover;   /* mantém a imagem inteira */
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px rgba(0,0,0,.2);
-  align-self: center;
 
-  
-  
-}
+    }
 
-/* bloco de texto do slide */
-#o-que-fazemos .texto-slide {
- display: flex;
-  flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
-  padding: 0 1rem;
-}
+    /* cada slide ocupa toda a área (um sobre o outro) */
+    #o-que-fazemos .slide {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        /* metade imagem / metade texto */
+        gap: 2rem;
+        align-items: center;
+        padding: 1rem;
+        box-sizing: border-box;
+        justify-content: end;
 
-#o-que-fazemos .texto-slide .t2 {
-  margin-bottom: .5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #004858;
-}
-#o-que-fazemos .texto-slide .p2 {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-}
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity .45s ease, transform .45s ease;
+        padding-left: 40px;
+    }
 
-/* botões de navegação (setas) */
-#o-que-fazemos .nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0;
-  background-color: rgba(0,0,0,.15) !important;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  transition: transform .2s ease, background-color .2s ease;
-  gap: 100px;
-}
+    /* slide visível */
+    #o-que-fazemos .slide.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        z-index: 2;
+    }
 
-#o-que-fazemos .nav-btn:hover {
-  background-color: rgba(0,0,0,.3) !important;
-}
-#o-que-fazemos .nav-prev { left: 12px; }
-#o-que-fazemos .nav-next { right: 12px; }
-#o-que-fazemos .nav-btn img {
-  width: 22px;
-  pointer-events: none;
-}
-#o-que-fazemos .nav-prev img { transform: rotate(180deg); }
+    /* imagem dentro do slide */
+    #o-que-fazemos .slide>img {
+        width: 100%;
+        height: 100%;
+        max-height: calc(100% - 2rem);
+        object-fit: cover;
+        /* mantém a imagem inteira */
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
+        align-self: center;
+
+
+
+    }
+
+    /* bloco de texto do slide */
+    #o-que-fazemos .texto-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* centraliza verticalmente */
+        padding: 0 1rem;
+    }
+
+    #o-que-fazemos .texto-slide .t2 {
+        margin-bottom: .5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #004858;
+    }
+
+    #o-que-fazemos .texto-slide .p2 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* botões de navegação (setas) */
+    #o-que-fazemos .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        background-color: rgba(0, 0, 0, .15);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        transition: transform .2s ease, background-color .2s ease;
+        gap: 100px;
+    }
+
+    #o-que-fazemos .nav-btn:hover {
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    #o-que-fazemos .nav-prev {
+        left: 12px;
+    }
+
+    #o-que-fazemos .nav-next {
+        right: 12px;
+    }
+
+    #o-que-fazemos .nav-btn img {
+        width: 22px;
+        pointer-events: none;
+    }
+
+    #o-que-fazemos .nav-prev img {
+        transform: rotate(180deg);
+    }
 
     .hidden {
         opacity: 0;
@@ -783,130 +803,147 @@
 
 
 
-   /* ============ SLIDER COMPLETO (DESKTOP) ============ */
-#o-que-fazemos {
-    background-color: #004858;
-  position: relative;
-  overflow: hidden;
-  padding-top: 5px; /* espaço para não bater no header fixo */
-}
+    /* ============ SLIDER COMPLETO (DESKTOP) ============ */
+    #o-que-fazemos {
+        background-color: #004858;
+        position: relative;
+        overflow: hidden;
+        padding-top: 5px;
+        /* espaço para não bater no header fixo */
+    }
 
-/* container raiz do slider */
-#o-que-fazemos .container-slider {
-  position: relative;
-  width: min(65%, 100%);
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 2px 2px 15px rgba(0,0,0,.15);
-  background: #f7fafa;
-  padding: 2rem;
-  min-height: 90%; /* altura mínima do slider */
-  box-sizing: border-box;
-  overflow: hidden;
-}
+    /* container raiz do slider */
+    #o-que-fazemos .container-slider {
+        position: relative;
+        width: min(65%, 100%);
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, .15);
+        background: #f7fafa;
+        padding: 2rem;
+        min-height: 90%;
+        /* altura mínima do slider */
+        box-sizing: border-box;
+        overflow: hidden;
+    }
 
-/* wrapper que contém os slides */
-#o-que-fazemos .slides {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  
-  
+    /* wrapper que contém os slides */
+    #o-que-fazemos .slides {
+        position: absolute;
+        width: 100%;
+        height: 90%;
 
-  
 
- 
-}
 
-/* cada slide ocupa toda a área (um sobre o outro) */
-#o-que-fazemos .slide {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 50% 50%; /* metade imagem / metade texto */
-  gap: 2rem;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  justify-content: start;
 
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: opacity .45s ease, transform .45s ease;
-  padding-left: 40px;
-}
 
-/* slide visível */
-#o-que-fazemos .slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  z-index: 2;
-}
 
-/* imagem dentro do slide */
-#o-que-fazemos .slide > img {
-  width: 100%;
-  height: 100%;
-  max-height: calc(100% - 2rem);
-  object-fit: cover;   /* mantém a imagem inteira */
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px rgba(0,0,0,.2);
-  align-self: center;
+    }
 
-  
-  
-}
+    /* cada slide ocupa toda a área (um sobre o outro) */
+    #o-que-fazemos .slide {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        /* metade imagem / metade texto */
+        gap: 2rem;
+        align-items: center;
+        padding: 1rem;
+        box-sizing: border-box;
+        justify-content: start;
 
-/* bloco de texto do slide */
-#o-que-fazemos .texto-slide {
- display: flex;
-  flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
-  padding: 0 1rem;
-}
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity .45s ease, transform .45s ease;
+        padding-left: 40px;
+    }
 
-#o-que-fazemos .texto-slide .t2 {
-  margin-bottom: .5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #004858;
-}
-#o-que-fazemos .texto-slide .p2 {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-}
+    /* slide visível */
+    #o-que-fazemos .slide.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        z-index: 2;
+    }
 
-/* botões de navegação (setas) */
-#o-que-fazemos .nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0;
-  background-color: rgba(0,0,0,.15) !important;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  transition: transform .2s ease, background-color .2s ease;
-  gap: 100px;
-}
+    /* imagem dentro do slide */
+    #o-que-fazemos .slide>img {
+        width: 100%;
+        height: 100%;
+        max-height: calc(100% - 2rem);
+        object-fit: cover;
+        /* mantém a imagem inteira */
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
+        align-self: center;
 
-#o-que-fazemos .nav-btn:hover {
-  background-color: rgba(0,0,0,.3) !important;
-}
-#o-que-fazemos .nav-prev { left: 12px; }
-#o-que-fazemos .nav-next { right: 12px; }
-#o-que-fazemos .nav-btn img {
-  width: 22px;
-  pointer-events: none;
-}
-#o-que-fazemos .nav-prev img { transform: rotate(180deg); }
+
+
+    }
+
+    /* bloco de texto do slide */
+    #o-que-fazemos .texto-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* centraliza verticalmente */
+        padding: 0 1rem;
+    }
+
+    #o-que-fazemos .texto-slide .t2 {
+        margin-bottom: .5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #004858;
+    }
+
+    #o-que-fazemos .texto-slide .p2 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* botões de navegação (setas) */
+    #o-que-fazemos .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        background-color: rgba(0, 0, 0, .15);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        transition: transform .2s ease, background-color .2s ease;
+        gap: 100px;
+    }
+
+    #o-que-fazemos .nav-btn:hover {
+        background-color: rgba(0, 0, 0, .3) !important;
+    }
+
+    #o-que-fazemos .nav-prev {
+        left: 2%;
+    }
+
+    #o-que-fazemos .nav-next {
+        right:  2%;
+        
+    }
+
+    #o-que-fazemos .nav-btn img {
+        width: 22px;
+        pointer-events: none;
+    }
+
+    #o-que-fazemos .nav-prev img {
+        transform: rotate(180deg);
+    }
 
 
 
