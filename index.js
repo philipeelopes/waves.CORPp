@@ -37,10 +37,10 @@ const myObserver = new IntersectionObserver( (entries) =>{
     entry.target.classList.remove('show')
   }
     
- })
-})
+ });
+});
 
-const elements = document.querySelectorAll('.hidden', '#hidden')
+const elements = document.querySelectorAll('.hidden',)
 
 elements.forEach( (element) => myObserver.observe (element))
 
@@ -51,38 +51,62 @@ window.addEventListener('load', () => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const section = document.querySelector('#o-que-fazemos');
   if (!section) return;
 
   const sliderRoot = section.querySelector('.container-slider');
   const slides = Array.from(sliderRoot.querySelectorAll('.slide'));
+  if (!slides.length) return;
 
-  // botões agora estão fora do container
-  const btnPrev = section.querySelector('#prev-button');
-  const btnNext = section.querySelector('#next-button');
+  // remove spacers antigos (se houver)
+  section.querySelectorAll('.spacer').forEach(s => s.remove());
 
-  let current = slides.findIndex(s => s.classList.contains('active'));
-  if (current === -1) {
-    current = 0;
-    if (slides[0]) slides[0].classList.add('active');
-  }
+  // cria um spacer (100vh) por slide e adiciona ao final da seção
+  slides.forEach((_, i) => {
+    const spacer = document.createElement('div');
+    spacer.className = 'spacer';
+    spacer.dataset.index = i;
+    section.appendChild(spacer);
+  });
 
+  // função para mostrar slide por índice
   function show(index) {
     index = (index + slides.length) % slides.length;
     slides.forEach((s, i) => s.classList.toggle('active', i === index));
-    current = index;
   }
 
-  btnPrev && btnPrev.addEventListener('click', () => show(current - 1));
-  btnNext && btnNext.addEventListener('click', () => show(current + 1));
+  // start com o primeiro slide ativo
+  show(0);
 
-  sliderRoot.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') show(current - 1);
-    if (e.key === 'ArrowRight') show(current + 1);
+  // observer que detecta qual spacer está visível (meio/centro da viewport)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = Number(entry.target.dataset.index || 0);
+        show(idx);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.5
   });
-  sliderRoot.setAttribute('tabindex', '0');
+
+  section.querySelectorAll('.spacer').forEach(s => observer.observe(s));
+
+  // teclas para navegar (opcional)
+  document.addEventListener('keydown', e => {
+    const current = slides.findIndex(s => s.classList.contains('active'));
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      const next = Math.min(current + 1, slides.length - 1);
+      const target = section.querySelector(`.spacer[data-index="${next}"]`);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      const prev = Math.max(current - 1, 0);
+      const target = section.querySelector(`.spacer[data-index="${prev}"]`);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
 
 

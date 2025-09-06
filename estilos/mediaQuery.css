@@ -732,7 +732,7 @@
     }
 
     section .p1 {
-        font-size: 1.2em;
+        font-size: 1.1em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
@@ -804,88 +804,115 @@
 
 
     /* ============ SLIDER COMPLETO (DESKTOP) ============ */
-    #o-que-fazemos {
-        background-color: #004858;
-        position: relative;
-        overflow: hidden;
-        padding-top: 5px;
-        /* espaço para não bater no header fixo */
-    }
+  
+/* ===== Slider por scroll - overrides para centralizar e permitir sticky ===== */
+section#o-que-fazemos { 
+  width: 100%;
+  display: block;                /* sobrescreve o display:flex global */
+  height: auto !important;       /* permite que os "spacers" aumentem a altura da seção */
+  padding-top: 100px;            /* mesmo top usado no sticky */
+  padding-bottom: 100vh;         /* garante espaço final para o último slide */
+  background-color: #004858;
+  overflow: visible;
+}
 
-    /* container raiz do slider */
-    #o-que-fazemos .container-slider {
-        position: relative;
-        width: min(65%, 100%);
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, .15);
-        background: #f7fafa;
-        padding: 2rem;
-        min-height: 80%;
-        /* altura mínima do slider */
-        box-sizing: border-box;
-        overflow: hidden;
-        border-radius: 24px;
-    }
+/* viewport sticky, centralizado */
+#o-que-fazemos .container-slider {
+  position: sticky;
+  top: 130px;                    /* ajuste conforme altura do seu header */
+  height: calc(100vh - 130px);
+  width: 80%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f7fafa;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  box-shadow: 2px 2px 15px rgba(0,0,0,.15);
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 5;
+}
 
-    /* wrapper que contém os slides */
-    #o-que-fazemos .slides {
-        position: relative;
-        width: 100%;
-        height: auto;
+/* area que contém os slides (empilhados) */
+#o-que-fazemos .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-      
-    }
+/* cada slide ocupa toda a área (um sobre o outro) */
+#o-que-fazemos .slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  align-items: center;
+  padding: 0rem;
+  box-sizing: border-box;
 
-    /* cada slide ocupa toda a área (um sobre o outro) */
-    #o-que-fazemos .slide {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        /* metade imagem / metade texto */
-        gap: 0rem;
-        align-items: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        justify-content: start;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
 
-        opacity: 0;
-        transform: translateY(10px);
-        pointer-events: none;
-        transition: opacity .45s ease, transform .45s ease;
-        padding-left: 10px;
-         
-    }
+/* slide ativo (visível) */
+#o-que-fazemos .slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  z-index: 2;
+}
 
-    /* slide visível */
-    #o-que-fazemos .slide.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        z-index: 2;
-    }
-
-    /* imagem dentro do slide */
-    #o-que-fazemos .slide>img {
-        width: 100%;
-        height: 79%;
-        max-height: calc(100% - 2rem);
-        object-fit: cover;
-        /* mantém a imagem inteira */
-        border-radius: 14px;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
-        align-self: self-start;
+/* imagem cobre a coluna inteira do slide */
+#o-que-fazemos .slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 2px 2px 15px rgba(0,0,0,.2);
 
 
+   transform: translateY(100px);
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
 
-    }
+#o-que-fazemos .slide > div { /* a coluna do texto */
+  transform: translateY(60px);
+  opacity: 0;
+  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s; /* começa um pouco depois */
+}
+
+#o-que-fazemos .slide.active > img,
+#o-que-fazemos .slide.active > div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* cada spacer cria 100vh de rolagem para trocar slides */
+#o-que-fazemos .spacer {
+  height: 100vh;
+  width: 100%;
+}
+
+/* esconder setas caso ainda existam no HTML */
+#o-que-fazemos .nav-btn { display: none !important; }
+
+
+
+
+
+
 
     /* bloco de texto do slide */
     #o-que-fazemos .texto-slide {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
+        
         /* centraliza verticalmente */
         padding: 0 1rem;
     }
@@ -955,6 +982,7 @@
     .hidden {
         opacity: 0;
         filter: blur(15px);
+        transform: translateY(80px);
         transition: all 1s;
 
 
@@ -963,6 +991,7 @@
     .show {
         opacity: 1;
         filter: blur(0);
+        transform: translateY(0px);
         transition: all 1s;
     }
 
