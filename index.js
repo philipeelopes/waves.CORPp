@@ -1,116 +1,106 @@
 
+
+
+
+
+
+// ===== menu / header toggle =====
 window.addEventListener('scroll', function(){
-   let header = document.querySelector('#menu')
-    header.classList.toggle('rolagem',window.scrollY > 500)
-
-
-})
+  const header = document.querySelector('#menu');
+  if (header) header.classList.toggle('rolagem', window.scrollY > 500);
+});
 
 const menuBtn = document.getElementById('menu-btn');
 const menuIcon = document.getElementById('menu-icon');
 const nav = document.getElementById('nav');
+if (menuBtn) {
+  function closeMenu() {
+    if (nav) nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    if (menuIcon) menuIcon.textContent = 'menu';
+  }
 
-function closeMenu() {
-  nav.classList.remove('open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  menuIcon.textContent = 'menu';
+  menuBtn.addEventListener('click', () => {
+    const opened = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(opened));
+    if (menuIcon) menuIcon.textContent = opened ? 'close' : 'menu';
+  });
+
+  document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
-menuBtn.addEventListener('click', () => {
-  const opened = nav.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', String(opened));
-  menuIcon.textContent = opened ? 'close' : 'menu';
-});
+// ===== intersection observer para .hidden (outras seções) =====
+const myObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+    else entry.target.classList.remove('show');
+  });
+}, { threshold: 0.2 });
 
-document.querySelectorAll('#nav a').forEach(a => {
-  a.addEventListener('click', closeMenu);
-});
+document.querySelectorAll('.hidden').forEach(el => myObserver.observe(el));
 
-
-const imagem = document.querySelector('.imagem')
-
-const myObserver = new IntersectionObserver( (entries) =>{
- entries.forEach ( (entry) =>{
-  if(entry.isIntersecting){
-    entry.target.classList.add('show')
-  } else{
-    entry.target.classList.remove('show')
-  }
-    
- });
-});
-
-const elements = document.querySelectorAll('.hidden',)
-
-elements.forEach( (element) => myObserver.observe (element))
-
+// banner on load
 window.addEventListener('load', () => {
   const banner = document.querySelector('.banner');
-  banner.classList.add('show');
+  if (banner) banner.classList.add('show');
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const section = document.querySelector('#o-que-fazemos');
-  if (!section) return;
-
-  const sliderRoot = section.querySelector('.container-slider');
-  const slides = Array.from(sliderRoot.querySelectorAll('.slide'));
-  if (!slides.length) return;
-
-  // remove spacers antigos (se houver)
-  section.querySelectorAll('.spacer').forEach(s => s.remove());
-
-  // cria um spacer (100vh) por slide e adiciona ao final da seção
-  slides.forEach((_, i) => {
-    const spacer = document.createElement('div');
-    spacer.className = 'spacer';
-    spacer.dataset.index = i;
-    section.appendChild(spacer);
-  });
-
-  // função para mostrar slide por índice
-  function show(index) {
-    index = (index + slides.length) % slides.length;
-    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+// ===== SLIDER GSAP + ScrollTrigger =====
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.warn('GSAP ou ScrollTrigger não carregados. Verifique se os <script> CDN estão antes do index.js');
+    return;
   }
+  gsap.registerPlugin(ScrollTrigger);
 
-  // start com o primeiro slide ativo
-  show(0);
+  const slider = document.querySelector('#o-que-fazemos .container-slider');
+  const slides = gsap.utils.toArray('#o-que-fazemos .slide');
 
-  // observer que detecta qual spacer está visível (meio/centro da viewport)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const idx = Number(entry.target.dataset.index || 0);
-        show(idx);
-      }
-    });
-  }, {
-    root: null,
-    threshold: 0.5
+  if (!slider || slides.length === 0) return;
+
+  // preparo inicial
+  slides.forEach((s, i) => {
+    s.classList.remove('visible');
+    gsap.set(s, { autoAlpha: 0, yPercent: 5, zIndex: slides.length - i });
   });
+  slides[0].classList.add('visible');
+  gsap.set(slides[0], { autoAlpha: 1, yPercent: 0 });
 
-  section.querySelectorAll('.spacer').forEach(s => observer.observe(s));
+  // função que calcula o tamanho total do scroll (reavaliada no refresh)
+  const totalScroll = () => window.innerHeight * slides.length;
 
-  // teclas para navegar (opcional)
-  document.addEventListener('keydown', e => {
-    const current = slides.findIndex(s => s.classList.contains('active'));
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      const next = Math.min(current + 1, slides.length - 1);
-      const target = section.querySelector(`.spacer[data-index="${next}"]`);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      const prev = Math.max(current - 1, 0);
-      const target = section.querySelector(`.spacer[data-index="${prev}"]`);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+  // timeline
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: slider,
+      start: "top top",
+      end: () => "+=" + totalScroll(),
+      scrub: 0.6,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true
     }
   });
+
+  slides.forEach((slide, i) => {
+    // entrada do slide
+    tl.to(slide, { autoAlpha: 1, yPercent: 0, duration: 1 }, i);
+
+    // atualiza classe visible (leve delay para garantir render)
+    tl.call(() => {
+      slides.forEach(s => s.classList.remove('visible'));
+      slide.classList.add('visible');
+    }, null, i + 0.01);
+
+    // saída (exceto o último)
+    if (i !== slides.length - 1) {
+      tl.to(slide, { autoAlpha: 0, yPercent: -20, duration: 1 }, i + 0.85);
+    }
+  });
+
+  // ao redimensionar, o end será recalculado (invalidateOnRefresh true)
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+  });
 });
-
-
-
-
-
-
