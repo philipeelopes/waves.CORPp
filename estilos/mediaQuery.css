@@ -509,7 +509,7 @@
 
 
 @media screen and (min-width: 1025px) {
-    /* desktop*/
+    desktop
 
 
 
@@ -760,7 +760,6 @@
     .imagem img {
         width: 65%;
         height: 40%;
-        border-radius: 10px;
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
 
     }
@@ -795,7 +794,6 @@
 
     #quem-somos .imagem-secundaria img {
         width: 95%;
-        border-radius: 10px;
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 
     }
@@ -807,57 +805,61 @@
   
 /* ===== Slider por scroll - overrides para centralizar e permitir sticky ===== */
 
-/* ============ SLIDER (DESKTOP) ============ */
+/* ===== SLIDER (DESKTOP) ===== */
+
 #o-que-fazemos {
   position: relative;
   width: 100%;
-  height: 100vh;            /* altura fixa igual à viewport */
-  background: #004858;      /* fundo fixo */
-  overflow: hidden;         /* não deixa vazar conteúdo */
+  overflow: visible;
 }
+
+
+#o-que-fazemos .pin-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(var(--slides, 1) * 100vh);
+}
+
 
 #o-que-fazemos .slides {
   position: relative;
   width: 100%;
   height: 100%;
+  will-change: transform;
 }
 
+
 #o-que-fazemos .slide {
-  position: absolute;       /* ficam empilhados no mesmo lugar */
-  top: 0;
-  left: 0;
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  gap: 3rem;
+  padding: 0 6%;
 }
 
 #o-que-fazemos .slide img {
-  width: 100%;
-  height: 100%;
+  flex: 0 0 45%;
+  max-width: 45%;
+  max-height: 70vh;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
 #o-que-fazemos .texto-slide {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  color: white;
-  padding: 1rem;
-  background: rgba(0,0,0,0.3); /* fundo leve p/ o texto aparecer */
+  flex: 0 0 45%;
+  max-width: 45%;
+  background: rgba(0,0,0,0.25);
+  padding: 1.6rem;
   border-radius: 10px;
+  color: #fff;
 }
 
 
-
-/* esconder setas caso existam */
 #o-que-fazemos .nav-btn { display: none !important; }
 
 
@@ -870,13 +872,12 @@
 
 
 
-    /* bloco de texto do slide */
+   
     #o-que-fazemos .texto-slide {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        
-        /* centraliza verticalmente */
+       
         padding: 0 1rem;
     }
 
@@ -893,7 +894,7 @@
         color: #333;
     }
 
-    /* botões de navegação (setas) */
+   
     #o-que-fazemos .nav-btn {
         position: absolute;
         top: 50%;
@@ -972,8 +973,6 @@
         border-top: 1px solid #FA4616;
         border-left: 1px solid #FA4616;
         border-bottom: 1px solid #FA4616;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
         padding: 2%;
 
     }

@@ -3,7 +3,6 @@
 
 
 
-
 // ===== menu / header toggle =====
 window.addEventListener('scroll', function(){
   const header = document.querySelector('#menu');
@@ -47,22 +46,3 @@ window.addEventListener('load', () => {
 
 
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const slides = gsap.utils.toArray("#o-que-fazemos .slide");
-
-  gsap.to(slides, {
-    yPercent: -100 * (slides.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#o-que-fazemos",
-      pin: true,                       // trava a seção na tela
-      scrub: 1,                        // anima conforme o scroll
-      end: () => "+=" + slides.length * window.innerHeight,
-      invalidateOnRefresh: true
-    }
-  });
-});
