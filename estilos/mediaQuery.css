@@ -802,44 +802,37 @@
 
 
     /* ============ SLIDER COMPLETO (DESKTOP) ============ */
-  
-/* ===== Slider por scroll - overrides para centralizar e permitir sticky ===== */
-
-/* ===== SLIDER (DESKTOP) ===== */
-
-#o-que-fazemos {
+  #o-que-fazemos {
   position: relative;
   width: 100%;
-  overflow: visible;
+  height: 100vh;   /* seção sempre ocupa a tela */
+  overflow: hidden;
 }
-
 
 #o-que-fazemos .pin-wrap {
   position: relative;
   width: 100%;
-  height: calc(var(--slides, 1) * 100vh);
+  height: 100%;
 }
-
 
 #o-que-fazemos .slides {
   position: relative;
   width: 100%;
   height: 100%;
-  will-change: transform;
 }
 
-
 #o-que-fazemos .slide {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  padding: 0 6%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease;
 }
+
 
 #o-que-fazemos .slide img {
   flex: 0 0 45%;
@@ -858,6 +851,7 @@
   border-radius: 10px;
   color: #fff;
 }
+
 
 
 #o-que-fazemos .nav-btn { display: none !important; }

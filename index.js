@@ -1,8 +1,5 @@
 
 
-
-
-
 // ===== menu / header toggle =====
 window.addEventListener('scroll', function(){
   const header = document.querySelector('#menu');
@@ -43,6 +40,52 @@ window.addEventListener('load', () => {
   const banner = document.querySelector('.banner');
   if (banner) banner.classList.add('show');
 });
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.error('GSAP ou ScrollTrigger não carregados');
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  const slides = gsap.utils.toArray('#o-que-fazemos .slide');
+
+  slides.forEach((slide, i) => {
+    gsap.fromTo(slide,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#o-que-fazemos",
+          start: () => "top -" + (i * window.innerHeight),
+          end: () => "+=" + window.innerHeight,
+          scrub: true,
+          pin: true,
+          markers: false,
+          onEnter: () => {
+            // mostra só o slide atual
+            slides.forEach((s, j) => s.style.opacity = (i === j) ? "1" : "0");
+          },
+          onEnterBack: () => {
+            slides.forEach((s, j) => s.style.opacity = (i === j) ? "1" : "0");
+          }
+        }
+      }
+    );
+  });
+});
+
+
 
 
 
