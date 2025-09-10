@@ -49,43 +49,31 @@ window.addEventListener('load', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    console.error('GSAP ou ScrollTrigger não carregados');
-    return;
-  }
+
+document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const slides = gsap.utils.toArray('#o-que-fazemos .slide');
+  const slides = gsap.utils.toArray("#o-que-fazemos .slide");
+
+  // timeline que controla os slides
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#o-que-fazemos",
+      start: "top top",
+      end: () => "+=" + (slides.length * window.innerHeight),
+      scrub: true,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
 
   slides.forEach((slide, i) => {
-    gsap.fromTo(slide,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#o-que-fazemos",
-          start: () => "top -" + (i * window.innerHeight),
-          end: () => "+=" + window.innerHeight,
-          scrub: true,
-          pin: true,
-          markers: false,
-          onEnter: () => {
-            // mostra só o slide atual
-            slides.forEach((s, j) => s.style.opacity = (i === j) ? "1" : "0");
-          },
-          onEnterBack: () => {
-            slides.forEach((s, j) => s.style.opacity = (i === j) ? "1" : "0");
-          }
-        }
-      }
-    );
+    // entrada
+    tl.to(slide, { opacity: 1, y: 0, duration: 0.8 }, i);
+
+    // saída (menos o último)
+    if (i < slides.length - 1) {
+      tl.to(slide, { opacity: 0, y: -40, duration: 0.8 }, i + 0.7);
+    }
   });
 });
-
-
-
-
-
