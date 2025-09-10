@@ -803,59 +803,89 @@
 
     /* ============ SLIDER COMPLETO (DESKTOP) ============ */
 
+
 #o-que-fazemos {
   width: 100%;
   background: #004858;
   padding: 0;
+  position: relative;
+  color: white;
 }
-
+/* Container para centralizar e limitar largura */
 #o-que-fazemos .container-slider {
   width: 100%;
-  height: 100vh; /* ocupa a tela inteira */
+  height: 70vh; /* altura limitada */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
 }
-
+/* Slides empilhados */
 #o-que-fazemos .slides {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
-
+/* Cada slide ocupa toda área, empilhados */
 #o-que-fazemos .slide {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  box-sizing: border-box;
-
   opacity: 0;
-  transform: translateY(40px);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  transition: opacity 0.8s ease;
 }
-
-#o-que-fazemos .slide img {
+/* Slide visível */
+#o-que-fazemos .slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Conteúdo do slide: imagem e texto lado a lado */
+#o-que-fazemos .slide-content {
+  display: flex;
   width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+/* Imagem lado esquerdo */
+#o-que-fazemos .slide-content img {
+  width: 50%;
   height: auto;
-  border-radius: 15px;
+  max-height: 70vh;
   object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-
+/* Texto lado direito */
+#o-que-fazemos .texto-slide {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+/* Título */
 #o-que-fazemos .texto-slide h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #004858;
+  color: #FA4616;
 }
-
+/* Parágrafo */
 #o-que-fazemos .texto-slide p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #eee;
 }
 
 

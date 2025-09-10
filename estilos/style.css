@@ -374,106 +374,29 @@ paleta
     box-sizing: border-box;
 }
 
-#o-que-fazemos .container-slider {
-    width: 100%;
-    max-width: 100%; /* Limite máximo do slider */
-    margin: 0 auto;
-    border-radius: 24px;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-    background: #f7fafa;
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    height: 770px;
-
-}
-
-#o-que-fazemos .slides {
-    width: 100%;
-    display: flex;
+  #o-que-fazemos .container-slider {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  #o-que-fazemos .slide-content {
     flex-direction: column;
-    gap: 1rem;
-}
-
-#o-que-fazemos .slide {
+    gap: 1.5rem;
+  }
+  #o-que-fazemos .slide-content img,
+  #o-que-fazemos .texto-slide {
     width: 100%;
-    display: none; /* todos escondidos */
-    flex-direction: column-reverse; /* imagem em cima, texto abaixo */
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-#o-que-fazemos .slide.active {
-    display: flex; /* apenas o ativo aparece */
-}
-
-#o-que-fazemos .slide > img {
-    width: 100%;
-    max-width: 100%;
-    max-height: 600px; /* altura máxima */
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-#o-que-fazemos .texto-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0.5rem 0;
-    text-align: center;
-}
-
-#o-que-fazemos .texto-slide .t2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #004858;
-    margin-bottom: 0.5rem;
-}
-
-#o-que-fazemos .texto-slide .p2 {
+  }
+  #o-que-fazemos .slide-content img {
+    max-height: 300px;
+  }
+  #o-que-fazemos .texto-slide h2 {
+    font-size: 2rem;
+  }
+  #o-que-fazemos .texto-slide p {
     font-size: 1rem;
-    line-height: 1.5rem;
-    color: #333;
-    border-bottom:1px solid #FA4616;
-    border-top:1px solid #FA4616;
+  }
 
-
-}
-
-/* Botões de navegação */
-#o-que-fazemos .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-    z-index: 5;
-}
-
-#o-que-fazemos .nav-prev { left: 10px; }
-#o-que-fazemos .nav-next { right: 10px; }
-
-#o-que-fazemos .nav-btn img {
-    width: 18px;
-    pointer-events: none;
-}
-
-
-    #o-que-fazemos .nav-prev img {
-        transform: rotate(180deg);
-    }
+  
 
     .texto2 {
         width: 90%;

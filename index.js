@@ -49,13 +49,18 @@ window.addEventListener('load', () => {
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const slides = gsap.utils.toArray("#o-que-fazemos .slide");
 
-  // timeline que controla os slides
+  // Inicializa: só o primeiro slide visível
+  slides.forEach((slide, i) => {
+    if(i === 0) slide.classList.add('active');
+    else slide.classList.remove('active');
+  });
+
+  // Timeline para animar os slides com ScrollTrigger e pin
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#o-que-fazemos",
@@ -68,12 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   slides.forEach((slide, i) => {
-    // entrada
-    tl.to(slide, { opacity: 1, y: 0, duration: 0.8 }, i);
+    // Fade in do slide atual
+    tl.to(slide, {opacity: 1, duration: 1}, i);
 
-    // saída (menos o último)
-    if (i < slides.length - 1) {
-      tl.to(slide, { opacity: 0, y: -40, duration: 0.8 }, i + 0.7);
+    // Marca slide como ativo para mostrar pointer-events e classe
+    tl.call(() => {
+      slides.forEach(s => s.classList.remove('active'));
+      slide.classList.add('active');
+    }, null, i);
+
+    // Fade out do slide atual (menos o último)
+    if(i < slides.length - 1) {
+      tl.to(slide, {opacity: 0, duration: 1}, i + 0.9);
     }
   });
 });
+
