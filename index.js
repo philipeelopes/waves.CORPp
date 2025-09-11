@@ -47,45 +47,56 @@ window.addEventListener('load', () => {
 
 
 
+gsap.registerPlugin(ScrollTrigger);
 
+const slides = gsap.utils.toArray("#o-que-fazemos .slide");
 
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const slides = gsap.utils.toArray("#o-que-fazemos .slide");
-
-  // Inicializa: só o primeiro slide visível
-  slides.forEach((slide, i) => {
-    if(i === 0) slide.classList.add('active');
-    else slide.classList.remove('active');
-  });
-
-  // Timeline para animar os slides com ScrollTrigger e pin
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#o-que-fazemos",
-      start: "top top",
-      end: () => "+=" + (slides.length * window.innerHeight),
-      scrub: true,
-      pin: true,
-      anticipatePin: 1
-    }
-  });
-
-  slides.forEach((slide, i) => {
-    // Fade in do slide atual
-    tl.to(slide, {opacity: 1, duration: 1}, i);
-
-    // Marca slide como ativo para mostrar pointer-events e classe
-    tl.call(() => {
-      slides.forEach(s => s.classList.remove('active'));
-      slide.classList.add('active');
-    }, null, i);
-
-    // Fade out do slide atual (menos o último)
-    if(i < slides.length - 1) {
-      tl.to(slide, {opacity: 0, duration: 1}, i + 0.9);
-    }
-  });
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#o-que-fazemos",
+    start: "top top",
+    end: "+=" + (slides.length * 100) + "%",
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+    // markers: true // descomente para debug
+  }
 });
 
+slides.forEach((slide, i) => {
+  const img = slide.querySelector("img");
+  const texto = slide.querySelector(".texto-slide");
+
+  // Aparece o slide inteiro (opacity 1)
+  tl.to(slide, {
+    opacity: 1,
+    duration: 0.1,
+    ease: "none"
+  }, i * 1.5);
+
+  // Anima a imagem vindo de baixo para cima
+  tl.to(img, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power1.out"
+  }, i * 1.5);
+
+  // Anima o texto vindo de baixo para cima, com pequeno delay
+  tl.to(texto, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power1.out"
+  }, i * 1.5 + 0.2);
+
+  // Desaparece o slide (imagem, texto e slide juntos) antes do próximo aparecer
+  if (i !== slides.length - 1) {
+    tl.to([img, texto, slide], {
+      opacity: 0,
+      y: -50,
+      duration: 0.5,
+      ease: "power1.in"
+    }, i * 1.5 + 1);
+  }
+});
