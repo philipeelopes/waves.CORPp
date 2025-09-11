@@ -45,8 +45,6 @@ window.addEventListener('load', () => {
 
 
 
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 const slides = gsap.utils.toArray("#o-que-fazemos .slide");
@@ -67,14 +65,14 @@ slides.forEach((slide, i) => {
   const img = slide.querySelector("img");
   const texto = slide.querySelector(".texto-slide");
 
-  // Aparece o slide inteiro (opacity 1)
+  // Slide aparece
   tl.to(slide, {
     opacity: 1,
     duration: 0.1,
     ease: "none"
   }, i * 1.5);
 
-  // Anima a imagem vindo de baixo para cima
+  // Imagem sobe
   tl.to(img, {
     opacity: 1,
     y: 0,
@@ -82,7 +80,7 @@ slides.forEach((slide, i) => {
     ease: "power1.out"
   }, i * 1.5);
 
-  // Anima o texto vindo de baixo para cima, com pequeno delay
+  // Texto sobe com delay
   tl.to(texto, {
     opacity: 1,
     y: 0,
@@ -90,7 +88,7 @@ slides.forEach((slide, i) => {
     ease: "power1.out"
   }, i * 1.5 + 0.2);
 
-  // Desaparece o slide (imagem, texto e slide juntos) antes do próximo aparecer
+  // Some antes do próximo aparecer
   if (i !== slides.length - 1) {
     tl.to([img, texto, slide], {
       opacity: 0,
