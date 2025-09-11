@@ -1,6 +1,3 @@
-
-
-
 @charset "UTF-8";
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -346,7 +343,7 @@
         justify-content: center;
         align-items: start;
         width: 90%;
-        
+
         /* centraliza verticalmente */
         padding: 0 1rem;
     }
@@ -509,11 +506,7 @@
 
 
 @media screen and (min-width: 1025px) {
-    desktop
-
-
-
-    * {
+    desktop * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -804,124 +797,144 @@
     /* ============ SLIDER COMPLETO (DESKTOP) ============ */
 
 
-/* Estilos para animação dos slides na seção #o-que-fazemos */
-#o-que-fazemos {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: #004858;
-  color: white;
-  padding: 0;
-}
+    /* Estilos para animação dos slides na seção #o-que-fazemos */
+    #o-que-fazemos {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #004858;
+        color: white;
+        padding: 0;
+    }
 
 
-#o-que-fazemos .container-slider {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  
-}
-
-#o-que-fazemos .slides {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-#o-que-fazemos .slide {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80vw;
-  max-width: 70%;
-  height: 90vh;
-  transform: translate(-50%, -50%) translateY(50px);
-  opacity: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-
-  box-sizing: border-box;
-  color: white;
-}
-
-#o-que-fazemos .slide-content {
-  display: flex;
-  flex-direction: row;        /* imagem + texto lado a lado */
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  background-color: #000000;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-}
+    #o-que-fazemos .container-slider {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
 
+    }
 
-#o-que-fazemos .slide:nth-child(even) .slide-content {
-  flex-direction: row-reverse;
-  
-}
-#o-que-fazemos .img5{
-    border-top-right-radius: 50px;
-    border-top-left-radius: 0px;
-}
-#o-que-fazemos .img6{
-    border-top-left-radius: 50px;
-    border-top-right-radius: 0px;
-}
+    #o-que-fazemos .slides {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #o-que-fazemos .slide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        max-width: 70%;
+        height: 90vh;
+        transform: translate(-50%, -50%) translateY(50px);
+        opacity: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        box-sizing: border-box;
+        color: white;
+    }
+
+    #o-que-fazemos .slide-content {
+        display: flex;
+        flex-direction: row;
+        /* imagem + texto lado a lado */
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: #000000;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
 
 
 
+    #o-que-fazemos .slide:nth-child(even) .slide-content {
+        flex-direction: row-reverse;
 
-#o-que-fazemos .slide img  {
-  flex: 0 0 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-bottom: 0;
-  display: block;
-  transform: translateY(50px);
-  opacity: 0;
-}
+    }
 
-#o-que-fazemos .texto-slide {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  align-items: start;
-  transform: translateY(50px);
-  opacity: 0;
-}
+    #o-que-fazemos .img4 {
+        border-top-right-radius: 50px;
+        border-top-left-radius: 0px;
+    }
 
+    #o-que-fazemos .img3 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
 
-#o-que-fazemos .texto-slide h2 {
-  margin: 0 0 15px;
-  font-size: 2rem;
-  color: #ffffff;
-}
+    #o-que-fazemos .img5 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
 
-#o-que-fazemos .texto-slide p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #ccc;
-}
+    #o-que-fazemos .img6 {
+        border-top-right-radius: 50px;
+        border-top-left-radius: 0px;
+    }
 
-#o-que-fazemos .nav-btn { display: none !important; }
+    #o-que-fazemos .img7 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
 
 
 
 
+    #o-que-fazemos .slide img {
+        flex: 0 0 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+        display: block;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    #o-que-fazemos .texto-slide {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        align-items: start;
+        transform: translateY(50px);
+        opacity: 0;
+
+    }
+
+
+    #o-que-fazemos .texto-slide h2 {
+        margin: 0 0 15px;
+        font-size: 2rem;
+        color: #ffffff;
+        padding-top: 80px;
+        padding-left: 60px;
+
+    }
+
+    #o-que-fazemos .texto-slide p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #ccc;
+        padding-left: 60px;
+
+    }
+
+    #o-que-fazemos .nav-btn {
+        display: none !important;
+    }
 
 
 
@@ -929,12 +942,16 @@
 
 
 
-   
+
+
+
+
+
     #o-que-fazemos .texto-slide {
         display: flex;
         flex-direction: column;
         justify-content: start;
-       
+
         padding: 0 1rem;
     }
 
@@ -951,7 +968,7 @@
         color: #333;
     }
 
-   
+
     #o-que-fazemos .nav-btn {
         position: absolute;
         top: 50%;
@@ -978,8 +995,8 @@
     }
 
     #o-que-fazemos .nav-next {
-        right:  13%;
-        
+        right: 13%;
+
     }
 
     #o-que-fazemos .nav-btn img {
