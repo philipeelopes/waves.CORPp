@@ -174,9 +174,9 @@
 
     .texto {
         flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+        
+       
+        
         max-width: 100%;
         padding-left: 2%;
     }
@@ -184,6 +184,10 @@
     section h2 {
         font-size: 2em;
         margin-bottom: 2%;
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
     }
 
     section p {
@@ -196,7 +200,6 @@
 
     .imagem {
         flex: 1;
-        padding-left: 2%;
         padding-top: 4%;
         display: flex;
         align-items: center;
@@ -206,10 +209,9 @@
 
     .imagem img {
         object-fit: cover;
-        width: 85%;
+        width: 95%;
         height: 100%;
 
-        border-radius: 15px;
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
 
     }
@@ -226,10 +228,6 @@
 
     }
 
-    .texto2 {
-        width: 95%;
-
-    }
 
     #quem-somos .texto {
         order: 0;
@@ -281,11 +279,11 @@
 
     #o-que-fazemos .slide {
         position: absolute;
-        top: 50%;
+        top: 10%;
         left: 50%;
-        width: 80vw;
-        max-width: 70%;
-        height: 90vh;
+        width: 90vw;
+        max-width: 90%;
+        height: 100vh;
         transform: translate(-50%, -50%) translateY(50px);
         opacity: 0;
         display: flex;
@@ -298,7 +296,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 2%;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
@@ -358,6 +356,7 @@
         flex-direction: column;
         justify-content: start;
         text-align: left;
+        padding-left: 4%;
         align-items: start;
         transform: translateY(50px);
         opacity: 0;
@@ -452,12 +451,10 @@
     }
 
     .texto11 {
-        flex: 0 0 100%;
         margin-top: 1.5rem;
-        padding-left: 0%;
         display: flex;
-        align-items: end;
-        justify-content: end;
+        align-items: center;
+        justify-content: center;
 
 
 
@@ -469,16 +466,14 @@
 
     .texto11 .p11 {
 
-        width: 100%;
-        max-width: 100%;
+        width: 92%;
+        max-width: 92%;
         font-size: 1.2em;
         line-height: 1.6em;
-        text-align: center;
+        text-align: left;
+       
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+       
     }
 }
 
@@ -816,7 +811,7 @@
 
     #o-que-fazemos .slide {
         position: absolute;
-        top: 50%;
+        top: 10%;
         left: 50%;
         width: 80vw;
         max-width: 70%;
@@ -838,8 +833,8 @@
         height: 100%;
         box-sizing: border-box;
         background-color: #000000;
-        border-top-left-radius: 7%;
-        border-top-right-radius: 7%;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
     }
 
     
@@ -849,27 +844,27 @@
     }
 
     #o-que-fazemos .img4 {
-        border-top-right-radius: 50px;
+        border-top-right-radius: 60px;
         border-top-left-radius: 0px;
     }
 
     #o-que-fazemos .img3 {
-        border-top-left-radius: 50px;
+        border-top-left-radius: 60px;
         border-top-right-radius: 0px;
     }
 
     #o-que-fazemos .img5 {
-        border-top-left-radius: 50px;
+        border-top-left-radius: 60px;
         border-top-right-radius: 0px;
     }
 
     #o-que-fazemos .img6 {
-        border-top-right-radius: 50px;
+        border-top-right-radius: 60px;
         border-top-left-radius: 0px;
     }
 
     #o-que-fazemos .img7 {
-        border-top-left-radius: 50px;
+        border-top-left-radius: 60px;
         border-top-right-radius: 0px;
     }
 
