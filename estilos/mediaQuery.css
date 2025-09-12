@@ -160,7 +160,7 @@
 
     section {
         height: calc(100vh + 10px);
-        padding-top: 130px;
+        padding-top: 80px;
 
 
 
@@ -222,7 +222,7 @@
         flex-direction: column;
         align-items: center;
         text-align: left;
-        padding-bottom: 20%;
+        padding-bottom: 100%;
 
     }
 
@@ -248,157 +248,145 @@
         margin-top: 5%;
     }
 
-    #o-que-fazemos {
+   
 
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+      /* Estilos para animação dos slides na seção #o-que-fazemos */
+    #o-que-fazemos {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #004858;
+        color: white;
+        padding: 0;
     }
 
-    #o-que-fazemos {
-        background-color: #004858;
+
+    #o-que-fazemos .container-slider {
         position: relative;
-        overflow: hidden;
-        padding-top: 5px;
-        /* espaço para não bater no header fixo */
+        width: 100%;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
 
-    }
-
-    /* container raiz do slider */
-    #o-que-fazemos .container-slider {
-        position: absolute;
-        width: min(65%, 100%);
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-        background: #f7fafa;
-        padding: 2rem;
-        min-height: 60%;
-        /* altura mínima do slider */
-        box-sizing: border-box;
-        overflow: hidden;
-
-
-
 
     }
 
-    /* wrapper que contém os slides */
     #o-que-fazemos .slides {
-        position: absolute;
+        position: relative;
         width: 100%;
-        height: 90%;
+        height: 100vh;
     }
 
-    /* cada slide ocupa toda a área (um sobre o outro) */
     #o-que-fazemos .slide {
         position: absolute;
-        inset: 0;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        /* metade imagem / metade texto */
-        gap: 2rem;
-        align-items: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        justify-content: center;
-
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        max-width: 70%;
+        height: 90vh;
+        transform: translate(-50%, -50%) translateY(50px);
         opacity: 0;
-        transform: translateY(10px);
-        pointer-events: none;
-        transition: opacity .45s ease, transform .45s ease;
-        padding-left: 40px;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        color: white;
     }
 
-    /* slide visível */
-    #o-que-fazemos .slide.active {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        z-index: 2;
-    }
-
-    /* imagem dentro do slide */
-    #o-que-fazemos .slide>img {
+    #o-que-fazemos .slide-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
         width: 100%;
         height: 100%;
-        max-height: calc(100% - 2rem);
-        object-fit: cover;
-        /* mantém a imagem inteira */
-        border-radius: 10px;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
-        align-self: center;
+        box-sizing: border-box;
+        background-color: #000000;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
 
-
+    
+    #o-que-fazemos .slide:nth-child(even) .slide-content {
+        flex-direction: row-reverse;
 
     }
 
-    /* bloco de texto do slide */
+    #o-que-fazemos .img4 {
+        border-top-right-radius: 50px;
+        border-top-left-radius: 0px;
+    }
+
+    #o-que-fazemos .img3 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
+
+    #o-que-fazemos .img5 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
+
+    #o-que-fazemos .img6 {
+        border-top-right-radius: 50px;
+        border-top-left-radius: 0px;
+    }
+
+    #o-que-fazemos .img7 {
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+    }
+
+
+
+
+    #o-que-fazemos .slide img {
+        flex: 0 0 50%;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+        display: block;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
     #o-que-fazemos .texto-slide {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
+        text-align: left;
         align-items: start;
-        width: 90%;
+        transform: translateY(50px);
+        opacity: 0;
 
-        /* centraliza verticalmente */
-        padding: 0 1rem;
     }
 
-    #o-que-fazemos .texto-slide .t2 {
-        margin-bottom: .5rem;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #004858;
+
+    #o-que-fazemos .texto-slide h2 {
+        margin: 0 0 15px;
+        font-size: 2rem;
+        color: #ffffff;
+        padding-top: 80px;
+       
+
     }
 
-    #o-que-fazemos .texto-slide .p2 {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #333;
+    #o-que-fazemos .texto-slide p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #ccc;
+       
+
     }
 
-    /* botões de navegação (setas) */
     #o-que-fazemos .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border: 0;
-        background-color: rgba(0, 0, 0, .15);
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 3;
-        display: grid;
-        place-items: center;
-        transition: transform .2s ease, background-color .2s ease;
-        gap: 100px;
+        display: none !important;
     }
 
-    #o-que-fazemos .nav-btn:hover {
-        background-color: rgba(0, 0, 0, .3);
-    }
-
-    #o-que-fazemos .nav-prev {
-        left: 12px;
-    }
-
-    #o-que-fazemos .nav-next {
-        right: 12px;
-    }
-
-    #o-que-fazemos .nav-btn img {
-        width: 22px;
-        pointer-events: none;
-    }
-
-    #o-que-fazemos .nav-prev img {
-        transform: rotate(180deg);
-    }
+   
 
     .hidden {
         opacity: 0;
@@ -794,7 +782,7 @@
 
 
 
-    /* ============ SLIDER COMPLETO (DESKTOP) ============ */
+
 
 
     /* Estilos para animação dos slides na seção #o-que-fazemos */
@@ -833,11 +821,10 @@
         width: 80vw;
         max-width: 70%;
         height: 90vh;
-        transform: translate(-50%, -50%) translateY(50px);
+        transform: translate(-50%, -50%) translateY(50%);
         opacity: 0;
         display: flex;
         flex-direction: row;
-        gap: 20px;
         box-sizing: border-box;
         color: white;
     }
@@ -845,19 +832,17 @@
     #o-que-fazemos .slide-content {
         display: flex;
         flex-direction: row;
-        /* imagem + texto lado a lado */
         justify-content: space-between;
         gap: 2rem;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
         background-color: #000000;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
+        border-top-left-radius: 7%;
+        border-top-right-radius: 7%;
     }
 
-
-
+    
     #o-que-fazemos .slide:nth-child(even) .slide-content {
         flex-direction: row-reverse;
 
@@ -891,36 +876,38 @@
 
 
 
-    #o-que-fazemos .slide img {
+     #o-que-fazemos .slide img {
         flex: 0 0 50%;
+         max-width: 50%;
         width: 100%;
         height: 100%;
         object-fit: cover;
         margin-bottom: 0;
         display: block;
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(5%);
     }
 
     #o-que-fazemos .texto-slide {
-        flex: 1;
+        flex: 1 1 50%;
+        min-width: 0;  
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         text-align: left;
         align-items: start;
-        transform: translateY(50px);
+        transform: translateY(5%);
         opacity: 0;
 
     }
 
 
     #o-que-fazemos .texto-slide h2 {
-        margin: 0 0 15px;
+        margin: 0 0 5%;
         font-size: 2rem;
         color: #ffffff;
         padding-top: 80px;
-        padding-left: 60px;
+        padding-left: 40px;
 
     }
 
@@ -928,7 +915,7 @@
         margin: 0;
         font-size: 1.2rem;
         color: #ccc;
-        padding-left: 60px;
+        padding-left: 40px;
 
     }
 
@@ -947,66 +934,12 @@
 
 
 
-    #o-que-fazemos .texto-slide {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
+  
 
-        padding: 0 1rem;
-    }
+  
 
-    #o-que-fazemos .texto-slide .t2 {
-        margin-bottom: .5rem;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #004858;
-    }
+    
 
-    #o-que-fazemos .texto-slide .p2 {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #333;
-    }
-
-
-    #o-que-fazemos .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border: 0;
-        background-color: rgba(0, 0, 0, .15);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 5;
-        display: grid;
-        place-items: center;
-        transition: transform .2s ease, background-color .2s ease;
-        gap: 100px;
-    }
-
-    #o-que-fazemos .nav-btn:hover {
-        background-color: rgba(0, 0, 0, .3) !important;
-    }
-
-    #o-que-fazemos .nav-prev {
-        left: 13%;
-    }
-
-    #o-que-fazemos .nav-next {
-        right: 13%;
-
-    }
-
-    #o-que-fazemos .nav-btn img {
-        width: 22px;
-        pointer-events: none;
-    }
-
-    #o-que-fazemos .nav-prev img {
-        transform: rotate(180deg);
-    }
 
 
 
