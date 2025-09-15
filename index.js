@@ -55,6 +55,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const slides = gsap.utils.toArray("#o-que-fazemos .slide");
 
+
+
+
 // Definir estados iniciais
 slides.forEach((s, idx) => {
   const img = s.querySelector("img");
@@ -76,7 +79,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: "#o-que-fazemos",
     start: "top top",
-    end: "+=" + (slides.length * 80) + "%",
+    end: "+=" + (slides.length *  window.innerHeight) ,
     scrub: 1.2,
     pin: true,
     pinSpacing: true,
@@ -102,3 +105,34 @@ slides.forEach((slide, i) => {
     tl.to(slide, { opacity: 0, y: -40, duration: 0.6, ease: "power2.in" }, i + 0.9);
   }
 });
+
+
+
+
+
+// Desativa animação no mobile (<=768px)
+function handleResize() {
+  if (window.innerWidth <= 768) {
+    // mata todos os triggers
+    ScrollTrigger.getAll().forEach(st => st.kill());
+
+    // limpa estilos dos slides
+    document.querySelectorAll("#o-que-fazemos .slide").forEach(s => {
+      gsap.set(s, { clearProps: "all" });
+      const img = s.querySelector("img");
+      const text = s.querySelector(".texto-slide");
+      if (img) gsap.set(img, { clearProps: "all" });
+      if (text) gsap.set(text, { clearProps: "all" });
+    });
+  }
+}
+
+// roda na carga e no resize
+handleResize();
+window.addEventListener("resize", handleResize);
+
+
+
+
+
+
