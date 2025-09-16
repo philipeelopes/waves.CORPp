@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 html {
@@ -45,7 +45,7 @@ paleta
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Questrial", sans-serif;
     }
 
     .flex {
@@ -243,7 +243,7 @@ paleta
 
     section {
        /* height: calc(100vh + 130px);*/
-        padding-top: 130px;
+        padding-top: 100px;
 
 
         display: flex;
@@ -271,14 +271,14 @@ paleta
         order: 99;
 
         display: flex;
-        align-items: end;
+        align-items: center;
         justify-content: start;
 
 
 
         border-top: 1px solid #FA4616;
         border-bottom: 1px solid #FA4616;
-        padding: 5%;
+        padding: 2%;
 
     }
 
@@ -292,19 +292,18 @@ paleta
     }
 
      #quem-somos .texto {
-        order:0;
+        order:2;
     }
 
     #quem-somos .imagem {
-        order: 1;
+        order: 0;
     }
 
-    #quem-somos .bloco-extra {
-     order: 2; 
-    }
+  
     #quem-somos .texto11 {
         width: 100%;
         margin-top: 5%;
+        color: #004858
     }
 
     section h2 {
@@ -327,7 +326,7 @@ paleta
     }
 
     .imagem {
-        padding: 0;
+        padding-bottom: 20%;
         width: 90%;
         display: flex;
         align-items: center;
@@ -338,13 +337,10 @@ paleta
     .imagem img {
         width: 100%;
         height: auto;
-        border-radius: 15px;
+        
     }
 
-     #quem-somos .imagem-secundaria img{
-        display: none;
-     }
-
+   
 
 
 
@@ -353,8 +349,8 @@ paleta
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        justify-content: flex-start;
+        text-align: left;
+        justify-content: start;
         gap: 2%;
 
 
