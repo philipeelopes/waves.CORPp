@@ -45,6 +45,72 @@ window.addEventListener('load', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 768) return; // só roda no mobile
+
+  const cards = Array.from(document.querySelectorAll('.impact-card'));
+  if (!cards.length) return;
+
+  let current = 0;
+  let isAnimating = false;
+  const duration = 700;
+
+  // estado inicial
+  cards.forEach((c, i) => {
+    c.classList.remove('active','prev');
+    if (i === current) c.classList.add('active');
+    else {
+      c.style.transform = 'translateX(100%)';
+      c.style.opacity = '0';
+    }
+  });
+
+  function goNext() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const outgoing = cards[current];
+    const nextIndex = (current + 1) % cards.length;
+    const incoming = cards[nextIndex];
+
+    // prepara o incoming à direita
+    incoming.style.transition = 'none';
+    incoming.style.transform = 'translateX(100%)';
+    incoming.style.opacity = '1';
+    void incoming.offsetWidth; // força reflow
+    incoming.style.transition = '';
+
+    // ativa animação
+    outgoing.style.transform = 'translateX(-100%)';
+    outgoing.style.opacity = '0';
+    incoming.classList.add('active');
+    incoming.style.transform = 'translateX(0)';
+
+    const cleanup = () => {
+      outgoing.classList.remove('active');
+      outgoing.removeEventListener('transitionend', cleanup);
+      isAnimating = false;
+    };
+    outgoing.addEventListener('transitionend', cleanup);
+    setTimeout(() => { if (isAnimating) cleanup(); }, duration + 100);
+
+    current = nextIndex;
+  }
+
+  // autoplay
+  setInterval(goNext, 4000);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

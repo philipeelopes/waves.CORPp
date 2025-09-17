@@ -278,6 +278,7 @@
 
     }
 .impact-grid{
+        position: relative;
         width: 95%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -293,7 +294,7 @@
         margin: 2%;
         border-radius: 12px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
-        transition: transform 0.3 ease;
+        
     }
 
     .impact-card:hover{

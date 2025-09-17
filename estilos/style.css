@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 html {
@@ -242,7 +242,7 @@ paleta
     }
 
     section {
-       /* height: calc(100vh + 130px);*/
+        /* height: calc(100vh + 130px);*/
         padding-top: 100px;
 
 
@@ -282,7 +282,7 @@ paleta
 
     }
 
-      .texto11 .p11 {
+    .texto11 .p11 {
 
         width: 100%;
         max-width: 100%;
@@ -292,15 +292,15 @@ paleta
     }
 
 
-     #quem-somos .texto {
-        order:2;
+    #quem-somos .texto {
+        order: 2;
     }
 
     #quem-somos .imagem {
         order: 0;
     }
 
-  
+
     #quem-somos .texto11 {
         width: 100%;
         margin-top: 5%;
@@ -338,10 +338,10 @@ paleta
     .imagem img {
         width: 100%;
         height: auto;
-        
+
     }
 
-   
+
 
 
 
@@ -356,67 +356,93 @@ paleta
     }
 
 
-.impact-grid{
+    .impact-grid {
+        position: relative;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2%;
-        margin-top: 2%;
-        
-        
-       
-        
-        
+        min-height: 560px;
+        overflow: hidden;
+        display: block;
+      
+
     }
 
-    .impact-card{
+    .impact-card.active {
+        opacity: 1;
+        z-index: 3;
+        transform: translatex(0);
+        pointer-events: auto;
 
+    }
+
+    .impact-card {
+        position: absolute;
         background: white;
-        padding: 1.5rem;
-        margin: 2%;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        box-sizing: border-box;
+
+
+        transform: translateX(100%);
+        opacity: 0;
+
+
+        transition: transform 700ms cubic-bezier(.22, 1, .36, 1), opacity 700ms ease;
+        z-index: 1;
+        pointer-events: none;
+
         border-radius: 12px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
-        transition: transform 0.3 ease;
 
-       
     }
 
-    .impact-card:hover{
+    .impact-card:hover {
         transform: translateY(-5px);
     }
 
-    .impact-section h2{
+    .impact-card.prev {
+        transform: translateX(-100%);
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .impact-section h2 {
         font-size: 2em;
         margin-bottom: 1%;
         font-weight: bolder;
         color: #004858;
         padding-left: 5%;
     }
-    .impact-section h3{
-        font-size: 1.5em;
-        margin-bottom: 1%;
+
+    .impact-section h3 {
+        font-size: 1.8em;
+        margin-bottom: 20%;
         font-weight: bolder;
         color: #004858;
-        padding-left: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
     }
 
-    .impact-section p{
-        
-        font-size: 1.1em;
+    .impact-section p {
+
+        font-size: 1.2em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
         color: black;
         padding-left: 5%;
+        padding-bottom: 100px;
     }
 
-    .impact-section ul li{
-         font-size: 1.1em;
+    .impact-section ul li {
+        font-size: 1.3em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
         color: black;
-        padding-left: 1%;
+        padding-left: 10%;
 
     }
 
@@ -430,90 +456,92 @@ paleta
 
 
 
-/* Segunda seção responsiva */
+    /* Segunda seção responsiva */
 
-      /* Estilos para animação dos slides na seção #o-que-fazemos */
-
-
-  #o-que-fazemos .container-slider {
-    height: auto;
-    display: block;
-    background-color: #04323a;
-  }
-
-  #o-que-fazemos .slides {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 90px; /* espaçamento entre os blocos */
-    padding-top: 90px;
-    
-
-  }
-
-  #o-que-fazemos .slide {
-    position: relative;   /* volta ao fluxo normal */
-    left: 0;
-    width: 90%;
-    opacity: 1 ;
-    transform: none;
-    display: flex;
-  }
-
-  #o-que-fazemos .slide-content {
-    flex-direction: column;  /* imagem em cima, texto embaixo */
-    border-radius: 50px;
-    background-color: #000; 
-    overflow: hidden;
-  }
-
-  #o-que-fazemos .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  #o-que-fazemos .texto-slide {
-    opacity: 1 !important;
-    transform: none !important;
-    padding: 15px;
-    text-align: left;
-  }
-
-  #o-que-fazemos .texto-slide h2 {
-    font-size: 1.5rem;
-    padding-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #o-que-fazemos .texto-slide p {
-    font-size: 1rem;
-    color: #ccc;
-  }
+    /* Estilos para animação dos slides na seção #o-que-fazemos */
 
 
-    
+    #o-que-fazemos .container-slider {
+        height: auto;
+        display: block;
+        background-color: #04323a;
+    }
+
+    #o-que-fazemos .slides {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 90px;
+        /* espaçamento entre os blocos */
+        padding-top: 90px;
+
+
+    }
+
+    #o-que-fazemos .slide {
+        position: relative;
+        /* volta ao fluxo normal */
+        left: 0;
+        width: 90%;
+        opacity: 1;
+        transform: none;
+        display: flex;
+    }
+
+    #o-que-fazemos .slide-content {
+        flex-direction: column;
+        /* imagem em cima, texto embaixo */
+        border-radius: 50px;
+        background-color: #000;
+        overflow: hidden;
+    }
+
+    #o-que-fazemos .slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    #o-que-fazemos .texto-slide {
+        opacity: 1 !important;
+        transform: none !important;
+        padding: 15px;
+        text-align: left;
+    }
+
+    #o-que-fazemos .texto-slide h2 {
+        font-size: 1.5rem;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #o-que-fazemos .texto-slide p {
+        font-size: 1rem;
+        color: #ccc;
+    }
+
+
+
     #o-que-fazemos .slide:nth-child(even) .slide-content {
         flex-direction: column-reverse;
 
     }
 
-    
 
 
 
 
- 
+
+
     #o-que-fazemos .nav-btn {
         display: none !important;
     }
 
 
-  
 
 
 
@@ -521,7 +549,8 @@ paleta
 
 
 
-    
+
+
     .hidden {
         opacity: 0;
         filter: blur(15px);
@@ -538,7 +567,7 @@ paleta
     }
 
 
-   
+
 
 
 
