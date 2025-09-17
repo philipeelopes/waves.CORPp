@@ -291,6 +291,7 @@ paleta
         text-align: justify;
     }
 
+
      #quem-somos .texto {
         order:2;
     }
@@ -352,9 +353,82 @@ paleta
         text-align: left;
         justify-content: start;
         gap: 2%;
+    }
 
+
+.impact-grid{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2%;
+        margin-top: 2%;
+        
+        
+       
+        
+        
+    }
+
+    .impact-card{
+
+        background: white;
+        padding: 1.5rem;
+        margin: 2%;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
+        transition: transform 0.3 ease;
+
+       
+    }
+
+    .impact-card:hover{
+        transform: translateY(-5px);
+    }
+
+    .impact-section h2{
+        font-size: 2em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 5%;
+    }
+    .impact-section h3{
+        font-size: 1.5em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 1%;
+    }
+
+    .impact-section p{
+        
+        font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 5%;
+    }
+
+    .impact-section ul li{
+         font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 1%;
 
     }
+
+
+
+
+
+
+
+
+
+
 
 /* Segunda seção responsiva */
 

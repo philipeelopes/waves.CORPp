@@ -52,7 +52,7 @@
 
     header ul li {
         display: inline-block;
-        margin: 0px 40px;
+        margin: 0px 20px;
 
 
     }
@@ -164,9 +164,7 @@
 
 
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+     
 
     }
 
@@ -182,6 +180,7 @@
     }
 
     section h2 {
+        color: #004858;
         font-size: 2em;
         margin-bottom: 2%;
 
@@ -228,6 +227,8 @@
 
     }
 
+    
+
 
     #quem-somos .texto {
         order: 0;
@@ -247,6 +248,91 @@
     }
 
 
+
+
+
+    .texto11 {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+
+
+        border-top: 1px solid #FA4616;
+        border-bottom: 1px solid #FA4616;
+        padding-top: 2%;
+        padding-bottom: 2%;
+
+    }
+
+    .texto11 .p11 {
+
+        width: 92%;
+        max-width: 92%;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        text-align: left;
+
+
+
+    }
+.impact-grid{
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10%;
+        margin-top: 2%;
+        padding-left: 5%;
+    }
+
+    .impact-card{
+
+        background: white;
+        padding: 1.5rem;
+        margin: 2%;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
+        transition: transform 0.3 ease;
+    }
+
+    .impact-card:hover{
+        transform: translateY(-5px);
+    }
+
+    .impact-section h2{
+        font-size: 2em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 5%;
+    }
+    .impact-section h3{
+        font-size: 1.8em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 1%;
+    }
+
+    .impact-section p{
+        font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 5%;
+    }
+
+    .impact-section ul li{
+         font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 1%;
+
+    }
 
     /* Estilos para animação dos slides na seção #o-que-fazemos */
     #o-que-fazemos {
@@ -402,37 +488,15 @@
         transition: all 0.5s;
     }
 
+    
+    
 
 
 
 
 
-    .texto11 {
-        margin-top: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: start;
 
-
-
-        border-top: 1px solid #FA4616;
-        border-bottom: 1px solid #FA4616;
-        padding-top: 2%;
-        padding-bottom: 2%;
-
-    }
-
-    .texto11 .p11 {
-
-        width: 92%;
-        max-width: 92%;
-        font-size: 1.2em;
-        line-height: 1.6em;
-        text-align: left;
-
-
-
-    }
+    
 }
 
 
@@ -646,9 +710,7 @@
 
 
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      
 
     }
 
@@ -730,7 +792,7 @@
         flex: 0 0 40%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         font-size: 1.2em;
         line-height: 1.6em;
         gap: 1.5rem;
@@ -752,17 +814,7 @@
         border-bottom: 1px solid #FA4616;
     }
 
-    #quem-somos .bloco-extra::before {
-        content: "";
-        position: absolute;
-        top: -.5%;
-        bottom: -.2%;
-        left: -100px;
-        /* quanto você quer que a borda “escape” */
-        width: 100px;
-        border-top: 1px solid #FA4616;
-        border-bottom: 1px solid #FA4616;
-    }
+  
 
     #quem-somos .texto11 .p11 {
 
@@ -795,6 +847,67 @@
 
 
 
+    
+
+    .impact-grid{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10%;
+        margin-top: 2%;
+        padding-left: 1%;
+    }
+
+    .impact-card{
+
+        background: white;
+        padding: 1.5rem;
+        margin: 2%;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
+        transition: transform 0.3 ease;
+    }
+
+    .impact-card:hover{
+        transform: translateY(-5px);
+    }
+
+    .impact-section h2{
+        font-size: 2em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 1%;
+    }
+    .impact-section h3{
+        font-size: 1.8em;
+        margin-bottom: 1%;
+        font-weight: bolder;
+        color: #004858;
+        padding-left: 1%;
+    }
+
+    .impact-section p{
+        font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 1%;
+    }
+
+    .impact-section ul li{
+         font-size: 1.1em;
+        line-height: 1.6em;
+        width: 100%;
+        height: auto;
+        color: black;
+        padding-left: 1%;
+
+    }
+     
+
+
 
 
 
@@ -808,7 +921,7 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        background: #ffffff;
+        background: #8ab9bd;
         color: white;
         padding: 0;
     }
