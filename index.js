@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // autoplay
-  let auto = setInterval(goNext, 4000);
+  let auto = setInterval(goNext, 7000);
 
   // swipe detect
   const container = document.querySelector('.impact-grid');

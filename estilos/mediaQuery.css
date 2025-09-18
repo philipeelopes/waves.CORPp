@@ -941,8 +941,8 @@
 
     .corner {
         position: absolute;
-        width: 20px;
-        height: 100px;
+        width: 5%;
+        height: 100%;
         border: 3px solid #004858;
         transition: all 0.3s ease;
     }

@@ -48,6 +48,11 @@ paleta
         font-family: "Questrial", sans-serif;
     }
 
+     html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
     .flex {
 
         display: flex;
@@ -353,17 +358,27 @@ paleta
         text-align: left;
         justify-content: start;
         gap: 2%;
+
     }
 
+
+    .impact-section {
+        background-color: #8ba0a5;
+        
+
+    }
 
     .impact-grid {
         position: relative;
         width: 100%;
-        min-height: 560px;
-        overflow: hidden;
+        height: 560px;
+        overflow: visible;
         display: block;
-       
-      
+
+
+
+
+
 
     }
 
@@ -372,6 +387,7 @@ paleta
         z-index: 3;
         transform: translatex(0);
         pointer-events: auto;
+
 
     }
 
@@ -382,8 +398,8 @@ paleta
         left: 5%;
         width: 90%;
         box-sizing: border-box;
-        
-       
+
+
 
 
         transform: translateX(100%);
@@ -396,13 +412,14 @@ paleta
         z-index: 1;
         pointer-events: none;
 
-       
-        box-shadow:  0px 4px 10px #0000005b;
+
+        box-shadow: 0px 4px 10px #0000005b;
 
     }
 
-    .impact-card:hover {
-        transform: translateY(-5px);
+     .impact-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
     }
 
     .impact-card.prev {
@@ -411,7 +428,7 @@ paleta
         z-index: 2;
     }
 
-    
+
     .impact-card:hover {
         transform: scale(1.03);
         box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
@@ -419,8 +436,8 @@ paleta
 
     .corner {
         position: absolute;
-        width: 20px;
-        height: 100%;
+        width: 20%;
+        height: 20%;
         border: 3px solid #004858;
         transition: all 0.3s ease;
     }
@@ -487,7 +504,8 @@ paleta
 
     .impact-section h3 {
         font-size: 1.8em;
-        margin-bottom: 20%;
+        margin-bottom: 10%;
+        padding-top: 10%;
         font-weight: bolder;
         color: #004858;
         display: flex;
@@ -502,7 +520,7 @@ paleta
         line-height: 1.6em;
         width: 100%;
         height: auto;
-        color: black;
+        color: black; 
         padding-left: 5%;
         padding-bottom: 100px;
     }
@@ -514,6 +532,8 @@ paleta
         height: auto;
         color: black;
         padding-left: 10%;
+        padding-bottom: 10%;
+        padding-right: 5%;
         list-style: none;
 
     }
@@ -638,9 +658,6 @@ paleta
         transition: all 0.5s;
     }
 
-
-
-
-
+   
 
 }
