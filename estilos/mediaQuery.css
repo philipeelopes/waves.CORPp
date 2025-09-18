@@ -7,7 +7,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-           font-family: "Questrial", sans-serif;
+        font-family: "Questrial", sans-serif;
 
     }
 
@@ -164,7 +164,7 @@
 
 
 
-     
+
 
     }
 
@@ -227,7 +227,7 @@
 
     }
 
-    
+
 
 
     #quem-somos .texto {
@@ -277,7 +277,8 @@
 
 
     }
-.impact-grid{
+
+    .impact-grid {
         position: relative;
         width: 95%;
         display: grid;
@@ -287,28 +288,91 @@
         padding-left: 5%;
     }
 
-    .impact-card{
-
+    .impact-card {
+        position: relative;
         background: white;
         padding: 1.5rem;
         margin: 2%;
-        border-radius: 12px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
-        
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: visible;
+
     }
 
-    .impact-card:hover{
-        transform: translateY(-5px);
+    .impact-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
     }
 
-    .impact-section h2{
+    .corner {
+        position: absolute;
+        width: 20px;
+        height: 100%;
+        border: 3px solid #004858;
+        transition: all 0.3s ease;
+    }
+
+    .corner.top-left {
+        top: 0px;
+        left: 0px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .corner.top-right {
+        top: 0px;
+        right: 0px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .corner.bottom-left {
+        bottom: 0px;
+        left: 0px;
+        border-right: none;
+        border-top: none;
+    }
+
+    .corner.bottom-right {
+        bottom: 0px;
+        right: 0px;
+        border-left: none;
+        border-top: none;
+    }
+
+    .impact-card:hover .corner.top-left {
+        top: -10px;
+        left: -10px;
+    }
+
+    .impact-card:hover .corner.top-right {
+        top: -10px;
+        right: -10px;
+    }
+
+    .impact-card:hover .corner.bottom-left {
+        bottom: -10px;
+        left: -10px;
+    }
+
+    .impact-card:hover .corner.bottom-right {
+        bottom: -10px;
+        right: -10px;
+    }
+
+
+
+
+
+    .impact-section h2 {
         font-size: 2em;
         margin-bottom: 1%;
         font-weight: bolder;
         color: #004858;
         padding-left: 5%;
     }
-    .impact-section h3{
+
+    .impact-section h3 {
         font-size: 1.8em;
         margin-bottom: 1%;
         font-weight: bolder;
@@ -316,7 +380,7 @@
         padding-left: 1%;
     }
 
-    .impact-section p{
+    .impact-section p {
         font-size: 1.1em;
         line-height: 1.6em;
         width: 100%;
@@ -325,8 +389,8 @@
         padding-left: 5%;
     }
 
-    .impact-section ul li{
-         font-size: 1.1em;
+    .impact-section ul li {
+        font-size: 1.1em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
@@ -489,15 +553,15 @@
         transition: all 0.5s;
     }
 
-    
-    
 
 
 
 
 
 
-    
+
+
+
 }
 
 
@@ -711,7 +775,7 @@
 
 
 
-      
+
 
     }
 
@@ -728,7 +792,7 @@
         margin-bottom: 5%;
         font-weight: bolder;
         color: #004858;
-        
+
 
 
 
@@ -742,7 +806,7 @@
         height: auto;
         color: black;
         padding-top: 0%;
-        
+
 
 
 
@@ -764,7 +828,7 @@
     .imagem img {
         width: 100%;
         object-fit: cover;
-        height: 80vh;
+        height: 85vh;
         box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.274);
 
     }
@@ -779,14 +843,14 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 2%;
-        padding-left: 1%;
+
     }
 
     #quem-somos .intro {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        /* espaço entre título e p1 */
+
+
     }
 
     #quem-somos .texto {
@@ -803,11 +867,11 @@
     #quem-somos .bloco-extra {
         position: relative;
         display: inline-block;
-        padding-left: 3%;
 
 
 
-        margin-bottom: 14%;
+
+
 
 
         border-top: 1px solid #FA4616;
@@ -815,11 +879,11 @@
         border-bottom: 1px solid #FA4616;
     }
 
-  
+
 
     #quem-somos .texto11 .p11 {
 
-        width: 70%;
+        width: 80%;
         max-width: 100%;
         font-size: 1.2em;
         line-height: 1.6em;
@@ -848,39 +912,104 @@
 
 
 
-    
 
-    .impact-grid{
+
+    .impact-grid {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10%;
         margin-top: 2%;
-        padding-left: 1%;
+
     }
 
-    .impact-card{
+    .impact-card {
+        position: relative;
 
         background: white;
         padding: 1.5rem;
         margin: 2%;
-        border-radius: 12px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
-        transition: transform 0.3 ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: visible;
     }
 
-    .impact-card:hover{
-        transform: translateY(-5px);
+    .impact-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
     }
 
-    .impact-section h2{
+    .corner {
+        position: absolute;
+        width: 20px;
+        height: 100px;
+        border: 3px solid #004858;
+        transition: all 0.3s ease;
+    }
+
+    .corner.top-left {
+        top: 0px;
+        left: 0px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .corner.top-right {
+        top: 0px;
+        right: 0px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .corner.bottom-left {
+        bottom: 0px;
+        left: 0px;
+        border-right: none;
+        border-top: none;
+    }
+
+    .corner.bottom-right {
+        bottom: 0px;
+        right: 0px;
+        border-left: none;
+        border-top: none;
+    }
+
+    .impact-card:hover .corner.top-left {
+        top: -10px;
+        left: -10px;
+    }
+
+    .impact-card:hover .corner.top-right {
+        top: -10px;
+        right: -10px;
+    }
+
+    .impact-card:hover .corner.bottom-left {
+        bottom: -10px;
+        left: -10px;
+    }
+
+    .impact-card:hover .corner.bottom-right {
+        bottom: -10px;
+        right: -10px;
+    }
+
+
+
+
+
+
+
+    .impact-section h2 {
         font-size: 2em;
         margin-bottom: 1%;
         font-weight: bolder;
         color: #004858;
         padding-left: 1%;
     }
-    .impact-section h3{
+
+    .impact-section h3 {
         font-size: 1.8em;
         margin-bottom: 1%;
         font-weight: bolder;
@@ -888,8 +1017,8 @@
         padding-left: 1%;
     }
 
-    .impact-section p{
-        font-size: 1.1em;
+    .impact-section p {
+        font-size: 1.2em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
@@ -897,8 +1026,8 @@
         padding-left: 1%;
     }
 
-    .impact-section ul li{
-         font-size: 1.1em;
+    .impact-section ul li {
+        font-size: 1.2em;
         line-height: 1.6em;
         width: 100%;
         height: auto;
@@ -906,7 +1035,7 @@
         padding-left: 1%;
 
     }
-     
+
 
 
 
