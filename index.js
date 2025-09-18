@@ -45,6 +45,7 @@ window.addEventListener('load', () => {
 
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth > 768) return; // só roda no mobile
 
@@ -54,34 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
   let current = 0;
   let isAnimating = false;
   const duration = 700;
+  let startX = 0;
+  let endX = 0;
 
   // estado inicial
   cards.forEach((c, i) => {
-    c.classList.remove('active','prev');
-    if (i === current) c.classList.add('active');
-    else {
+    if (i === current) {
+      c.classList.add('active');
+      c.style.transform = 'translateX(0)';
+      c.style.opacity = '1';
+    } else {
       c.style.transform = 'translateX(100%)';
       c.style.opacity = '0';
     }
   });
 
-  function goNext() {
-    if (isAnimating) return;
+  function goTo(nextIndex, direction = 1) {
+    if (isAnimating || nextIndex === current) return;
     isAnimating = true;
 
     const outgoing = cards[current];
-    const nextIndex = (current + 1) % cards.length;
     const incoming = cards[nextIndex];
 
-    // prepara o incoming à direita
+    // prepara o incoming (entra pela direita se direction=1, pela esquerda se -1)
     incoming.style.transition = 'none';
-    incoming.style.transform = 'translateX(100%)';
+    incoming.style.transform = `translateX(${direction * 100}%)`;
     incoming.style.opacity = '1';
     void incoming.offsetWidth; // força reflow
     incoming.style.transition = '';
 
-    // ativa animação
-    outgoing.style.transform = 'translateX(-100%)';
+    // anima
+    outgoing.style.transform = `translateX(${direction * -100}%)`;
     outgoing.style.opacity = '0';
     incoming.classList.add('active');
     incoming.style.transform = 'translateX(0)';
@@ -97,10 +101,38 @@ document.addEventListener('DOMContentLoaded', () => {
     current = nextIndex;
   }
 
-  // autoplay
-  setInterval(goNext, 4000);
-});
+  function goNext() {
+    goTo((current + 1) % cards.length, 1);
+  }
 
+  function goPrev() {
+    goTo((current - 1 + cards.length) % cards.length, -1);
+  }
+
+  // autoplay
+  let auto = setInterval(goNext, 4000);
+
+  // swipe detect
+  const container = document.querySelector('.impact-grid');
+  container.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    endX = startX;
+    clearInterval(auto); // pausa autoplay enquanto arrasta
+  });
+
+  container.addEventListener('touchmove', e => {
+    endX = e.touches[0].clientX;
+  });
+
+  container.addEventListener('touchend', () => {
+    const diff = endX - startX;
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) goNext(); // arrastou para esquerda
+      else goPrev(); // arrastou para direita
+    }
+    auto = setInterval(goNext, 4000); // retoma autoplay
+  });
+});
 
 
 
