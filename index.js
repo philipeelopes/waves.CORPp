@@ -57,24 +57,38 @@ window.addEventListener('load', () => {
 
 
 
+
+
  
 
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".impact-card");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".impact-card");
+  // Cria o observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show"); // reseta ao sair da tela
+      }
+    });
+  }, { threshold: 0.2 });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");   
-        } else {
-          entry.target.classList.remove("show"); i
-        }
-      });
-    }, { threshold: 0.2 });
+  // Define esquerda/direita com base na posição na grid
+  cards.forEach((card, index) => {
+    // se for par → esquerda | ímpar → direita
+    if (index % 2 === 0) {
+      card.classList.add("left");
+    } else {
+      card.classList.add("right");
+    }
 
-    cards.forEach(card => observer.observe(card));
+    observer.observe(card);
   });
+});
+
+
 
 
 
