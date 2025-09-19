@@ -243,7 +243,7 @@
     }
 
     #quem-somos .texto11 {
-        width: 100%;
+        width: 97%;
         margin-top: 5%;
     }
 
@@ -252,7 +252,6 @@
 
 
     .texto11 {
-        margin-top: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: start;
@@ -268,8 +267,8 @@
 
     .texto11 .p11 {
 
-        width: 92%;
-        max-width: 92%;
+        width: 95%;
+        max-width: 95%;
         font-size: 1.2em;
         line-height: 1.6em;
         text-align: left;
@@ -306,8 +305,8 @@
 
     .corner {
         position: absolute;
-        width: 20px;
-        height: 100%;
+        width: 15%;
+        height: 15%;
         border: 3px solid #004858;
         transition: all 0.3s ease;
     }
@@ -634,7 +633,7 @@
 
     header ul li {
         display: inline-flex;
-        margin: 0px 40px;
+        margin: 0px 30px;
 
 
 
@@ -708,12 +707,17 @@
 
 
 
+
         opacity: 0;
         filter: blur(15px);
         transform: translateY(20px);
         transition: all 1s;
 
     }
+
+
+
+
 
 
     .banner.show {
@@ -723,21 +727,38 @@
         transition: all 1s;
     }
 
-    .banner h1 {
-        font-size: 3em;
+
+
+    #titulo {
+        font-size: 1.4rem;
         color: #ffffff;
+        white-space: pre-wrap;
         font-family: "Questrial", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+    }
+
+    .destaque {
+        color: #4ee0e6;
+        font-weight: 700;
+
 
     }
 
-    .banner h1 span {
-        font-family: "Questrial", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #67dffa;
+    .typewriter-cursor {
+        display: inline-block;
+        width: 2px;
+        height: 6%;
+        vertical-align: bottom;
+        background: currentColor;
+        margin-left: 6px;
+        animation: blink 1s steps(1) infinite;
     }
+
+    @keyframes blink {
+        50% {
+            opacity: 0
+        }
+    }
+
 
     .rolagem {
         width: 100%;
@@ -867,6 +888,7 @@
     #quem-somos .bloco-extra {
         position: relative;
         display: inline-block;
+        width: 87%;
 
 
 
@@ -932,12 +954,30 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         overflow: visible;
+
+
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
 
     .impact-card:hover {
         transform: scale(1.03);
         box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
     }
+
+    
+
+
+
+   
+    .impact-card.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
 
     .corner {
         position: absolute;

@@ -1,3 +1,17 @@
+  window.addEventListener("load", function () {
+    // só aplica se for tela mobile (até 768px)
+    if (window.innerWidth <= 768) {
+      // remove qualquer hash da URL
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+      }
+
+      // força scroll para o topo
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  });
+
+
 
 
 // ===== menu / header toggle =====
@@ -40,6 +54,102 @@ window.addEventListener('load', () => {
   const banner = document.querySelector('.banner');
   if (banner) banner.classList.add('show');
 });
+
+
+
+ 
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".impact-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");   
+        } else {
+          entry.target.classList.remove("show"); i
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  });
+
+
+
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const el = document.getElementById("titulo");
+    
+    const speed = 100;
+    typeHTML(el, speed);
+  });
+
+  async function typeHTML(container, speed = 80) {
+    const originalHTML = container.innerHTML;
+    
+    container.innerHTML = "";
+
+  
+    const temp = document.createElement("div");
+    temp.innerHTML = originalHTML;
+
+    
+    const cursor = document.createElement("span");
+    cursor.className = "typewriter-cursor";
+    container.appendChild(cursor);
+
+    
+    const observer = new MutationObserver(() => {
+      if (container.lastChild !== cursor) {
+        container.appendChild(cursor);
+      }
+    });
+    observer.observe(container, { childList: true, subtree: true });
+
+    function wait(ms) { return new Promise(res => setTimeout(res, ms)); }
+
+   
+    async function processNode(parent, node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+       
+        const textNode = document.createTextNode("");
+        parent.appendChild(textNode);
+        const text = node.nodeValue;
+        for (let i = 0; i < text.length; i++) {
+          textNode.nodeValue += text.charAt(i);
+          await wait(speed);
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+       
+        const clone = node.cloneNode(false);
+        parent.appendChild(clone);
+       
+        for (let child of node.childNodes) {
+          await processNode(clone, child);
+        }
+      } else {
+        
+      }
+    }
+
+    for (let child of temp.childNodes) {
+      await processNode(container, child);
+    }
+
+    observer.disconnect();
+    
+     cursor.remove();  
+  }
+
+
+
+
 
 
 
