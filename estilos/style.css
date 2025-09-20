@@ -173,7 +173,7 @@ paleta
 
 
     .banner {
-        background-image: url(imagens/Design\ sem\ nome\ \(1\).png);
+        background-image: url(imagens/banner\ 2.jpg);
         height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -244,7 +244,7 @@ paleta
     }
 
     .banner h1 span {
-        color: #96f5f9;
+        color: #27B1CA;
     }
 
     section {
@@ -364,7 +364,7 @@ paleta
 
 
     .impact-section {
-        background-color: #8ba0a5;
+        background-color: #ffffff;
 
 
     }
@@ -560,7 +560,7 @@ paleta
     #o-que-fazemos .container-slider {
         height: auto;
         display: block;
-        background-color: #04323a;
+        background-image: url(imagens/entrada\ 3.jpg);
     }
 
     #o-que-fazemos .slides {
@@ -572,6 +572,7 @@ paleta
         gap: 90px;
         /* espaçamento entre os blocos */
         padding-top: 90px;
+        padding-bottom: 90px;
 
 
     }
@@ -603,8 +604,8 @@ paleta
     }
 
     #o-que-fazemos .texto-slide {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1 ;
+        transform: none;
         padding: 15px;
         text-align: left;
     }
