@@ -285,7 +285,7 @@
         gap: 10%;
         margin-top: 2%;
         padding-left: 5%;
-        
+
     }
 
     .impact-card {
@@ -296,8 +296,8 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         overflow: visible;
-         padding-bottom: 0%;
-       
+        padding-bottom: 0%;
+
 
     }
 
@@ -314,7 +314,7 @@
         height: 15%;
         border: 3px solid #004858;
         transition: all 0.3s ease;
-         
+
     }
 
     .corner.top-left {
@@ -800,7 +800,7 @@
 
     }
 
-  
+
 
     section .t1 {
         font-size: 2em;
@@ -821,9 +821,9 @@
         width: 100%;
         height: auto;
         color: black;
-          padding-left: 7%;
+        padding-left: 7%;
 
-        
+
 
 
 
@@ -861,7 +861,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 2%;
-        
+
 
     }
 
@@ -881,7 +881,7 @@
         line-height: 1.6em;
         gap: 1.5rem;
         color: #004858;
-        
+
     }
 
     #quem-somos .bloco-extra {
@@ -899,7 +899,7 @@
         border-top: 1px solid #FA4616;
         border-right: 1px solid #FA4616;
         border-bottom: 1px solid #FA4616;
-        transition: opacity 1s ease, transform 2s ease, box-shadow 1s ease;
+        transition: opacity 1s ease, transform 1s ease, box-shadow 1s ease;
     }
 
     #quem-somos .bloco-extra:hover {
@@ -951,7 +951,7 @@
 
         transform: translateX(80px) scale(1);
         opacity: 0;
-        transition: opacity 1s ease, transform 2s ease, box-shadow 1s ease;
+        transition: opacity 1s ease, transform 1s ease, box-shadow 1s ease;
     }
 
 
@@ -1219,12 +1219,15 @@
 
     #o-que-fazemos .texto-slide p {
         margin: 0;
-        font-size: 1.2rem;
-        color: #ccc;
+        font-size: 1.2em;
+        color: #ffffff;
         padding-left: 6%;
         padding-right: 6%;
 
     }
+
+
+
 
     #o-que-fazemos .nav-btn {
         display: none !important;
@@ -1237,14 +1240,21 @@
     }
 
     #o-que-fazemos #slide1 p {
-        color: #ffffff;
+        color: #004858;
     }
 
     #o-que-fazemos #slide1 h2 {
-        color: #ffffff;
+        color: white;
     }
 
+    #o-que-fazemos #slide1 .p0 {
+        padding-top: 2rem;
+        color: #ffffff;
 
+
+
+
+    }
 
     #o-que-fazemos #slide2 {
         background-color: #000000;
@@ -1252,19 +1262,24 @@
     }
 
     #o-que-fazemos #slide2 p {
-        color: #ffffff;
+        color: #004858;
     }
 
     #o-que-fazemos #slide2 h2 {
         color: #ffffff;
     }
 
+      #o-que-fazemos #slide2 .p0 {
+        padding-top: 2rem;
+        color: #ffffff;
+      }
+    
+
 
 
 
     #o-que-fazemos #slide3 {
         background-color: #f7f7f7;
-
     }
 
     #o-que-fazemos #slide3 p {
@@ -1274,11 +1289,15 @@
     #o-que-fazemos #slide3 h2 {
         color: #000000;
     }
+     #o-que-fazemos #slide3 .p0 {
+        padding-top: 2rem;
+        color: #000000;
+     }
+
 
 
     #o-que-fazemos #slide4 {
         background-color: #f7f7f7;
-
     }
 
     #o-que-fazemos #slide4 p {
@@ -1288,6 +1307,11 @@
     #o-que-fazemos #slide4 h2 {
         color: #000000;
     }
+     #o-que-fazemos #slide4 .p0 {
+        padding-top: 2rem;
+        color: #000000;
+     }
+
 
 
 
@@ -1306,35 +1330,22 @@
     }
 
     #o-que-fazemos #slide5 h2 {
-        color: #ffffff;
+        background-image: linear-gradient(to right, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
     }
 
+      #o-que-fazemos #slide5 .p0 {
+        padding-top: 2rem;
+        color: #ffffff;
+     }
 
 
 
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
 
 }
