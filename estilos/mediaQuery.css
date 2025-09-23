@@ -1344,8 +1344,64 @@
 
 
 
- 
 
-      
+#junte-se-a-nós{
+    background-color: #ffffff;
+    object-fit: cover; background-size: cover; 
+    background-position: center; background-repeat: no-repeat; 
+    height: 100vh; 
+    width: 100%; 
+    color: #004858; 
+    display: flex; 
+    align-items: start; 
+    justify-content: center; }
+
 
 }
+
+#junte-se-a-nós::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* camada escura para dar contraste */
+}
+
+#junte-se-a-nós .content {
+  position: relative;
+  z-index: 1;
+}
+
+#junte-se-a-nós h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  background: #004858;
+  color: #000000;
+}
+
+/* Cores específicas */
+.icon.whatsapp:hover { background: #25D366; }
+.icon.instagram:hover { background: #E1306C; }
+.icon.linkedin:hover { background: #0077B5; }
