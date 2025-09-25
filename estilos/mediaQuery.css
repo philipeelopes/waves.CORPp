@@ -1345,50 +1345,87 @@
 
 
 
-#junte-se-a-nós{
-    background-color: #ffffff;
-    object-fit: cover; background-size: cover; 
-    background-position: center; background-repeat: no-repeat; 
-    height: 100vh; 
-    width: 100%; 
-    color: #004858; 
-    display: flex; 
-    align-items: start; 
-    justify-content: center; }
+     
 
 
-}
 
-#junte-se-a-nós::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* camada escura para dar contraste */
+     
+#junte-se-a-nós {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  
 }
 
 #junte-se-a-nós .content {
+  width: 100%;
+  height: 60vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
+  gap: 40px;
+
+  background-image: url(imagens/ajuda.jpg);
+  background-size: cover;
+ 
 }
+
+
+#junte-se-a-nós .content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+
+#junte-se-a-nós h2,
+.social-icons {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff; 
+}
+
 
 #junte-se-a-nós h2 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  border-bottom: 2px solid #004858;
+
+  
+}
+
+#junte-se-a-nós p{
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* Ícones sociais */
+
 .social-icons {
   display: flex;
   gap: 20px;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .social-icons .icon {
   font-size: 2rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 50%;
@@ -1398,10 +1435,13 @@
 .social-icons .icon:hover {
   transform: scale(1.2) rotate(5deg);
   background: #004858;
-  color: #000000;
+  color: #ffffff;
 }
 
-/* Cores específicas */
+
 .icon.whatsapp:hover { background: #25D366; }
 .icon.instagram:hover { background: #E1306C; }
 .icon.linkedin:hover { background: #0077B5; }
+
+
+}

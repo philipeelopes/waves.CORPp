@@ -332,6 +332,9 @@ slides.forEach((slide, i) => {
 
 
 
+
+
+
 // Desativa animação no mobile (<=768px)
 function handleResize() {
   if (window.innerWidth <= 768) {
