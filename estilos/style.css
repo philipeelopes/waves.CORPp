@@ -543,6 +543,7 @@ paleta
         padding-bottom: 10%;
         padding-right: 5%;
         list-style: none;
+        
 
     }
 
@@ -616,10 +617,11 @@ paleta
     #o-que-fazemos .texto-slide h2 {
         font-size: 1.5rem;
         padding-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     #o-que-fazemos .texto-slide p {
+        padding-top: 20px;
         font-size: 1rem;
         color: #ffffff;
     }
@@ -656,7 +658,6 @@ paleta
     }
 
     #o-que-fazemos #slide1 .p0 {
-        padding-top: 2rem;
         color: #ffffff;
 
 
@@ -790,14 +791,14 @@ paleta
 
 #junte-se-a-nós .content {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  gap: 40px;
+  gap: 20px;
 
   background-image: url(imagens/ajuda.jpg);
   background-size: cover;
@@ -870,6 +871,105 @@ paleta
 .icon.instagram:hover { background: #E1306C; }
 .icon.linkedin:hover { background: #0077B5; }
 
+
+
+    .separator {
+  width: 100%;
+  height: 2px; 
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,72,88), 
+    transparent
+  );
+  margin: 40px 0;
+}
+
+
+
+footer {
+  background-color: #004858; 
+  color: white;
+  padding: 40px 20px 20px;
+  font-family: "Questrial", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 80%;
+  margin: auto;
+  gap: 100px;
+  
+}
+
+.footer-container div {
+  flex: 1 1 0;
+  margin: 1%;
+}
+
+.footer-logo h2 {
+  margin-bottom: 1%;
+  font-size: 1.6rem;
+  color: #FA4616; 
+}
+
+.footer-logo p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.footer-links h3,
+.footer-contato h3 {
+  margin-bottom: 1%;
+  font-size: 1.6rem;
+  color: #FA4616;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 1%;
+ 
+}
+
+.footer-links ul li {
+  margin: 10% 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #FA4616;
+}
+
+.footer-contato p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+
+
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  margin-top: 20px;
+}
 
 }
 
