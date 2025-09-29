@@ -1,15 +1,59 @@
   window.addEventListener("load", function () {
     // só aplica se for tela mobile (até 768px)
     if (window.innerWidth <= 768) {
-      // remove qualquer hash da URL
+      
       if (window.location.hash) {
         history.replaceState(null, null, window.location.pathname);
       }
 
-      // força scroll para o topo
+      
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   });
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const secs = Array.from(document.querySelectorAll('section')).filter(s => s.id !== 'titulo' && s.id !== 'o-que-fazemos');
+
+  // adiciona classes iniciais e lado
+  secs.forEach((s,i) => {
+    s.classList.add('section-anim');
+    if (i % 2 === 0) s.classList.add('left'); // pares: left, ímpares: direita
+  });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        // se quiser que apenas apareça uma vez, comente a linha abaixo
+        entry.target.classList.remove('show');
+      }
+    });
+  }, { threshold: 0.18 });
+
+  secs.forEach(s => obs.observe(s));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -19,6 +63,7 @@ window.addEventListener('scroll', function(){
   const header = document.querySelector('#menu');
   if (header) header.classList.toggle('rolagem', window.scrollY > 500);
 });
+
 
 const menuBtn = document.getElementById('menu-btn');
 const menuIcon = document.getElementById('menu-icon');
@@ -38,6 +83,9 @@ if (menuBtn) {
 
   document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', closeMenu));
 }
+
+
+
 
 // ===== intersection observer para .hidden (outras seções) =====
 const myObserver = new IntersectionObserver((entries) => {

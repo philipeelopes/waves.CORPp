@@ -30,6 +30,93 @@ html {
     border: 0;
 }
 
+
+/* classes para a animação */
+.section-anim {
+  opacity: 0;
+  transform: translateX(80px) translateY(10px);
+  transition: opacity .8s ease, transform .8s ease;
+  will-change: opacity, transform;
+}
+
+.section-anim.left {
+  transform: translateX(-80px) translateY(10px);
+}
+
+.section-anim.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+
+.section-anim h2,
+.section-anim p,
+.section-anim li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* quando ativa */
+.section-anim.show h2,
+.section-anim.show p,
+.section-anim.show li
+ {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delays em sequência */
+.section-anim.show h2 { transition-delay: 0.5s; }
+.section-anim.show p  { transition-delay: 0.8s; }
+.section-anim.show li { transition-delay: 0.8s; }
+
+
+
+
+
+
+
+
+
+/* estado inicial dos textos */
+.impact-card h3,
+.impact-card p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* quando section ativa */
+.impact-section.show .impact-card:nth-child(1) h3,
+.impact-section.show .impact-card:nth-child(1) p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.impact-section.show .impact-card:nth-child(2) h3,
+.impact-section.show .impact-card:nth-child(2) p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.impact-section.show .impact-card:nth-child(3) h3,
+.impact-section.show .impact-card:nth-child(3) p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.impact-section.show .impact-card:nth-child(4) h3,
+.impact-section.show .impact-card:nth-child(4) p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.4s;
+}
+
+
 /*
 paleta
 #67dffa
